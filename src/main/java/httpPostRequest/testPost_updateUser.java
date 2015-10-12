@@ -38,8 +38,8 @@ public class testPost_updateUser {
 //				+ "updateuser?username=user007&digest=e60e633cd564e24bcc4bcf91b1c3d7ccb9966d9a");
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();
 
-		nvps.add(new BasicNameValuePair("loginName", "user010")); //关键值 必须有
-		nvps.add(new BasicNameValuePair("name", "user007"));
+		nvps.add(new BasicNameValuePair("loginName", "user010")); //关键值 必须有  非空键值
+		nvps.add(new BasicNameValuePair("name", "user007"));//关键值 必须有  非空键值
 		//nvps.add(new BasicNameValuePair("password", "e60e633cd564e24bcc4bcf91b1c3d7ccb9966d9a"));
 		nvps.add(new BasicNameValuePair("phonenumber", "15522214561"));
 		nvps.add(new BasicNameValuePair("register_date", "1"));
