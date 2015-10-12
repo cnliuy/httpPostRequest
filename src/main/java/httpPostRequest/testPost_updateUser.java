@@ -12,6 +12,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -21,31 +22,33 @@ import org.apache.http.util.EntityUtils;
 
 /**
  * 全版本的Post 
- * 测试 注册流程
+ * 测试 更新用户 全流程
  * */
-public class testPost_Reg {
+public class testPost_updateUser {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 
 		//-------------------------------------http://localhost:8080/lr/api/v1/userregister------------------------------
+		String url = "http://localhost/lr/api/v1/usertools/updateuser?username=user007&digest=e60e633cd564e24bcc4bcf91b1c3d7ccb9966d9a" ;
+		HttpPost httpPost = new HttpPost(url);
 		
-		//HttpPost httpPost = new HttpPost("http://localhost:8080/lr/task/create?username=admin&digest=f6364126029045522b9a3dc0937ec26106bbe0d3&writesess=23");
-		//--  HttpPost httpPost = new HttpPost("http://localhost/lr/api/v1/userregister/");
-		HttpPost httpPost = new HttpPost("http://123.59.78.43:8080/lr/api/v1/userregister/");
-		
-		
+//		HttpPut httpPut = new HttpPut("http://localhost/lr/api/v1/usertools/"
+//				+ "updateuser?username=user007&digest=e60e633cd564e24bcc4bcf91b1c3d7ccb9966d9a");
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();
 
-		nvps.add(new BasicNameValuePair("loginName", "user010"));
+		nvps.add(new BasicNameValuePair("loginName", "user010")); //关键值 必须有
 		nvps.add(new BasicNameValuePair("name", "user007"));
-		nvps.add(new BasicNameValuePair("password", "111111"));
-		nvps.add(new BasicNameValuePair("phonenumber", "18222293800"));
-		nvps.add(new BasicNameValuePair("captchacode", "4718"));		
+		//nvps.add(new BasicNameValuePair("password", "e60e633cd564e24bcc4bcf91b1c3d7ccb9966d9a"));
+		nvps.add(new BasicNameValuePair("phonenumber", "15522214561"));
+		nvps.add(new BasicNameValuePair("register_date", "1"));
+		//nvps.add(new BasicNameValuePair("_method", "put"));		
+		nvps.add(new BasicNameValuePair("captchacode", "0000"));		
 		httpPost.setEntity(new UrlEncodedFormEntity(nvps));
+		//httpPut.setEntity(new UrlEncodedFormEntity(nvps));
 		CloseableHttpResponse response2 = httpclient.execute(httpPost);
-
+		//CloseableHttpResponse response2 = httpclient.execute(httpPut);
 		try {
 			
 		    System.out.println(response2.getStatusLine());		    
