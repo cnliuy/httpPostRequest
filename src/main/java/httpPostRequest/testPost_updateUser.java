@@ -31,17 +31,17 @@ public class testPost_updateUser {
 
 
 		//-------------------------------------http://localhost:8080/lr/api/v1/userregister------------------------------
-		String url = "http://localhost/lr/api/v1/usertools/updateuser?username=user007&digest=e60e633cd564e24bcc4bcf91b1c3d7ccb9966d9a" ;
+		String url = "http://localhost/lr/api/v1/usertools/updateuser?username=fab8cf43a14d4f90aab28d31ce1aa11b&digest=111111" ;
 		HttpPost httpPost = new HttpPost(url);
 		
 //		HttpPut httpPut = new HttpPut("http://localhost/lr/api/v1/usertools/"
 //				+ "updateuser?username=user007&digest=e60e633cd564e24bcc4bcf91b1c3d7ccb9966d9a");
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();
 
-		nvps.add(new BasicNameValuePair("loginName", "user010")); //关键值 必须有  非空键值
-		nvps.add(new BasicNameValuePair("name", "user007"));//关键值 必须有  非空键值
-		//nvps.add(new BasicNameValuePair("password", "e60e633cd564e24bcc4bcf91b1c3d7ccb9966d9a"));
-		nvps.add(new BasicNameValuePair("phonenumber", "15522214561"));
+		nvps.add(new BasicNameValuePair("loginName", "user010")); //关键值 必须有  非空键值  填完并不做验证 但是需要填写		
+		nvps.add(new BasicNameValuePair("name", "user0ooo1"));//关键值 必须有  非空键值
+		nvps.add(new BasicNameValuePair("password", "111111"));
+		nvps.add(new BasicNameValuePair("phonenumber", "15522214568"));
 		nvps.add(new BasicNameValuePair("register_date", "1"));
 		//nvps.add(new BasicNameValuePair("_method", "put"));		
 		nvps.add(new BasicNameValuePair("captchacode", "0000"));		

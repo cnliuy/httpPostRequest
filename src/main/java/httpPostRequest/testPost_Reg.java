@@ -69,10 +69,16 @@ public class testPost_Reg {
 		String uuid = UUID.randomUUID().toString(); 
 		String loginName = uuid.substring(0,8)+uuid.substring(9,13)+uuid.substring(14,18)+uuid.substring(19,23)+uuid.substring(24); 
 		nvps.add(new BasicNameValuePair("loginName", loginName));
-		nvps.add(new BasicNameValuePair("name", "user007"));
+		nvps.add(new BasicNameValuePair("name", "user008"));
 		nvps.add(new BasicNameValuePair("password", "111111"));
-		nvps.add(new BasicNameValuePair("phonenumber", "13662127862"));
-		nvps.add(new BasicNameValuePair("captchacode", "5683"));		
+		nvps.add(new BasicNameValuePair("phonenumber", "15522214563"));
+		nvps.add(new BasicNameValuePair("captchacode", "5191"));
+		nvps.add(new BasicNameValuePair("university", "天津大学"));
+		nvps.add(new BasicNameValuePair("universityId", "1"));
+		nvps.add(new BasicNameValuePair("subject", "通信工程"));
+		nvps.add(new BasicNameValuePair("subjectId", "1"));
+		nvps.add(new BasicNameValuePair("years", "2012"));
+		nvps.add(new BasicNameValuePair("yearsId", "2"));
 		httpPost.setEntity(new UrlEncodedFormEntity(nvps));
 		CloseableHttpResponse response2 = httpclient.execute(httpPost);
 
