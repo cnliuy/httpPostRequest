@@ -24,25 +24,26 @@ import org.apache.http.util.EntityUtils;
  * 全版本的Post 
  * 测试 更新用户 全流程
  * */
-public class testPost_updateUser {
+public class testPost_updateUser2 {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-
-
-		//-------------------------------------http://localhost:8080/lr/api/v1/userregister------------------------------
-		String url = "http://123.59.78.43:8080/lr/api/v1/usertools/updateuser?username=2f825eee5a7a439887f8df97cc68d7d8&digest=83ba6cc0df6c1a7dbbf908d78680c02a5f2e9077" ;
-		HttpPost httpPost = new HttpPost(url);
-		
+		String url = "http://123.59.78.43:8080/lr/api/v1/usertools/updateuser?username=15802238232&digest=f6364126029045522b9a3dc0937ec26106bbe0d3" ;
+		HttpPost httpPost = new HttpPost(url);		
 //		HttpPut httpPut = new HttpPut("http://localhost/lr/api/v1/usertools/"
 //				+ "updateuser?username=user007&digest=e60e633cd564e24bcc4bcf91b1c3d7ccb9966d9a");
-		List <NameValuePair> nvps = new ArrayList <NameValuePair>();
-
-		nvps.add(new BasicNameValuePair("loginName", "2f825eee5a7a439887f8df97cc68d7d8")); //关键值 必须有  非空键值  填完并不做验证 但是需要填写		
-		nvps.add(new BasicNameValuePair("name", "user0ooo1"));//关键值 必须有  非空键值
-		nvps.add(new BasicNameValuePair("password", "111111"));
-		nvps.add(new BasicNameValuePair("phonenumber", "15522214568"));
-		nvps.add(new BasicNameValuePair("register_date", "1"));
+		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
+		nvps.add(new BasicNameValuePair("loginName", "15802238232")); //关键值 必须有  非空键值  填完并不做验证 但是需要填写		
+		nvps.add(new BasicNameValuePair("name", "15802238232"));//关键值 必须有  非空键值
+		nvps.add(new BasicNameValuePair("password", "admin"));
+		nvps.add(new BasicNameValuePair("phonenumber", "15802238232"));		
+		nvps.add(new BasicNameValuePair("university", "%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6&"));
+		nvps.add(new BasicNameValuePair("universityId", "1"));
+		nvps.add(new BasicNameValuePair("subjectId", "1"));
+		nvps.add(new BasicNameValuePair("subject", "通信工程学院"));
+		nvps.add(new BasicNameValuePair("years", "2011"));
+		nvps.add(new BasicNameValuePair("years", "2011"));
+		nvps.add(new BasicNameValuePair("yearsId", "1"));
 		//nvps.add(new BasicNameValuePair("_method", "put"));		
 		nvps.add(new BasicNameValuePair("captchacode", "0000"));		
 		httpPost.setEntity(new UrlEncodedFormEntity(nvps));
