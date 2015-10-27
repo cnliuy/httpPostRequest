@@ -63,15 +63,15 @@ public class testPost_Reg {
 		//HttpPost httpPost = new HttpPost("http://localhost:8080/lr/task/create?username=admin&digest=f6364126029045522b9a3dc0937ec26106bbe0d3&writesess=23");
 		//--  HttpPost httpPost = new HttpPost("http://localhost/lr/api/v1/userregister/");
 		//--  HttpPost httpPost = new HttpPost("http://123.59.78.43:8080/lr/api/v1/userregister/");
-		HttpPost httpPost = new HttpPost("http://localhost/lr/api/v1/userregister/");
+		HttpPost httpPost = new HttpPost("http://localhost:8080/lr/api/v1/userregister/");
 		
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();
 		String uuid = UUID.randomUUID().toString(); 
 		String loginName = uuid.substring(0,8)+uuid.substring(9,13)+uuid.substring(14,18)+uuid.substring(19,23)+uuid.substring(24); 
 		nvps.add(new BasicNameValuePair("loginName", loginName));
-		nvps.add(new BasicNameValuePair("name", "user008"));
+		nvps.add(new BasicNameValuePair("name", "user010"));
 		nvps.add(new BasicNameValuePair("password", "111111"));
-		nvps.add(new BasicNameValuePair("phonenumber", "15522214563"));
+		nvps.add(new BasicNameValuePair("phonenumber", "15522214570"));
 		nvps.add(new BasicNameValuePair("captchacode", "5191"));
 		nvps.add(new BasicNameValuePair("university", "ÃÏΩÚ¥Û—ß"));
 		nvps.add(new BasicNameValuePair("universityId", "1"));
