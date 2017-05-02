@@ -3,3 +3,7 @@
 --------------------------------
 
 Test Post Request ( GBK encode )
+
+--------------------------------
+JWT的相关测试
+   ---  test_Jwt_Login.java  模拟ajax，传送json数据，测试JWT检测。
