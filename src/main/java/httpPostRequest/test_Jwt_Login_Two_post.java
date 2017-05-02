@@ -16,36 +16,24 @@ import org.apache.http.util.EntityUtils;
 
 
 /**
- * 测试 JWT登陆 1 
+ * 测试 JWT登陆 2 
  * 
- * 模拟客户端提价参数  通过Post方式
+ * 模拟客户端提交 token  通过Post方式
  * 
- * 参考：
- * http://yunjiechao-163-com.iteye.com/blog/1490796 * 
- * HttpClient 模拟 ajax 提交
- * http://blog.csdn.net/majian_1987/article/details/47728769 *
- * HttpClient 通过 Post 方式发送Json数据
  * 
  * @author LY
  * {@value}
  * 
  * 返回值：
- *  HTTP/1.1 200 
- *  {
- *  	"token" : "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTQ5MzcyMzU1NzY2MywiZXhwIjoxNDk0MzI4MzU3fQ.XHaVeL94443uQk3Uy0IdV3DHA10woYqxKYeG4e4Z8fb1qTmXtZy-4oko8R_jyhWtRldYL11i6jbCpDQCfHDERQ"
- *  }
  * */
-public class test_Jwt_Login {
+public class test_Jwt_Login_Two_post {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpPost httpPost = new HttpPost("http://127.0.0.1:8080/auth");		
-		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
-		httpPost.setHeader("Accept", "application/json");  
-		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
-
-		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
-		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));
+		HttpPost httpPost = new HttpPost("http://127.0.0.1:8080/");	
+		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTQ5MzcyMTMxODYyNiwiZXhwIjoxNDk0MzI2MTE4fQ.sOTwltpjjPvjqrPXFCzlLn0ugOUuVfrkadkgvGi1A-h4oeSW1VGsJ9wFX_n1jISSZ90U7tOBPZA3PiRo9WGBVg";
+		//httpPost.addHeader("Authorization",Token);
+		httpPost.setHeader("Authorization", Token);  		
 		CloseableHttpResponse response2 = httpclient.execute(httpPost);
 		try {	    
 		    HttpEntity entity2 = response2.getEntity();
