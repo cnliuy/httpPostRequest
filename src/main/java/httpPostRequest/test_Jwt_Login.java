@@ -43,6 +43,8 @@ public class test_Jwt_Login {
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
+		parameters = "{\"username\":\"username7÷–Œƒ ‰»Î1\",\"password\":\"123456\"}";
+		
 
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));

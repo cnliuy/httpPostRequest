@@ -22,7 +22,7 @@ import org.apache.http.util.EntityUtils;
 /**
  * 测试 JWT登陆 2 
  * 
- * 模拟客户端提交 token  通过Post方式
+ * 模拟客户端提交 token  通过get方式
  * 
  * 
  * @author LY
@@ -39,13 +39,14 @@ public class test_Jwt_Login_Two_get {
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
         String url = "http://127.0.0.1:8080/persons";      //1
-        url = "http://127.0.0.1:8080/protected";         //2
+        url = "http://127.0.0.1:8080/protected";         //2  需要 Admin 权限
         
 
        
         HttpGet httpGet = new HttpGet(url);
         CloseableHttpResponse response1 = httpclient.execute(httpGet);
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTQ5MzcyMzU1NzY2MywiZXhwIjoxNDk0MzI4MzU3fQ.XHaVeL94443uQk3Uy0IdV3DHA10woYqxKYeG4e4Z8fb1qTmXtZy-4oko8R_jyhWtRldYL11i6jbCpDQCfHDERQ";//RQ
+		String Token =  
+		"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZTfkuK3mlofovpPlhaUxIiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDkzODg4NDI0MTA5LCJleHAiOjE0OTQ0OTMyMjR9.ZAzILWNQrdctZoa0kGVpzKtMjJATMnvZCj0f_5jpHNjCvEa5FLk166DFCmnj0dn1IL2yGpO0tjhRU9q7ksgH11";//MA
 		//httpPost.addHeader("Authorization",Token);
 		httpGet.setHeader("Authorization", Token);    
         
