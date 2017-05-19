@@ -10,7 +10,10 @@ JWT的相关测试
    ---  test_Jwt_Login_Two_get  模拟get方法，头部设置token，传输并验证，JWT验证。
    
 --------------------------------  
-添加测试 CUTVAPI 项目的工具  2017 0519
+添加测试 CUTVAPI 项目的工具  2017 0519  
+
+项目地址：  
+https://github.com/cnliuy/httpPostRequest.git  
 
    
    
