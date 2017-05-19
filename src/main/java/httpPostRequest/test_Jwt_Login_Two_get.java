@@ -39,7 +39,7 @@ public class test_Jwt_Login_Two_get {
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
         String url = "http://127.0.0.1:8080/persons";      //1
-        url = "http://127.0.0.1:8080/protected";         //2  需要 Admin 权限
+       // url = "http://127.0.0.1:8080/protected";         //2  需要 Admin 权限
         
 
        

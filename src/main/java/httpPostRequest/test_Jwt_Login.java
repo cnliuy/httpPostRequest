@@ -44,6 +44,7 @@ public class test_Jwt_Login {
 		httpPost.setHeader("Accept", "application/json");  
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 		parameters = "{\"username\":\"username7÷–Œƒ ‰»Î1\",\"password\":\"123456\"}";
+		parameters = "{\"username\":\"username12317\",\"password\":\"12345678\"}";
 		
 
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
@@ -52,7 +53,7 @@ public class test_Jwt_Login {
 		try {	    
 		    HttpEntity entity2 = response2.getEntity();
 		    String response2txt=EntityUtils.toString(entity2);
-		    System.out.println(response2.getStatusLine());
+		    //System.out.println(response2.getStatusLine());
 		    System.out.println(response2txt);
 		    // do something useful with the response body
 		    // and ensure it is fully consumed
