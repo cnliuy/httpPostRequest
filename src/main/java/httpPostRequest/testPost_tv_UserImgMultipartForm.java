@@ -25,16 +25,18 @@ public class testPost_tv_UserImgMultipartForm {
 
 	public static void main(String[] args) {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpPost post = new HttpPost("http://127.0.0.1:8080/uploadTvUserImg");
-		
+		//HttpPost post = new HttpPost("http://127.0.0.1:5080/testSpringMVC/uploadTvUserImg");
+		HttpPost post = new HttpPost("http://127.0.0.1:5080/uploadTvUserImg");
 		
 		//用户认证
-		String Token ="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZTEyMzE3IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk1MDAwMTIyOTcyLCJleHAiOjE0OTU2MDQ5MjJ9.6MBtTb5w15lVnUs33CJAXPdE5sAMFfGW5GNOO2Tye7VdaPtuTatSp1o7E6o2NSmDFfQD1-cx5OaThyQbeh3hoA";
+		String Token ="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZTEyMzE3IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk1NDUyMjA5ODgzLCJleHAiOjE0OTYwNTcwMDl9.ek4YYsI89AyNBf8SE9vgezLTg_p7bzHpU5oL6ORafwUDKmlSECbLTMsajb-qU65N4qhmR9o6Bh25LLqApbFvwA";
+		Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyNTIzIiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk1NTQzMzUxMzUzLCJleHAiOjE0OTYxNDgxNTF9.0i-GTtBqDOIwQfrSo4LKrv6lGk970P4P9eV_nDiaOamd64tK0va-jNno1gnIs9AFzpBYcvvnNSVPPXU1dH1lTA";
+		Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1bmFtZTExMSIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTQ5NjE5Njc5MTU4MCwiZXhwIjoxNDk2ODAxNTkxfQ.Byn7kD6SY7EwWEpab8CQnJmnEwnOEFkR6ZNMx3sTjWQb1Q5a5E-uvReHKRQV9NAsGOkZhcQDJj_MCenc0DRB7w";
 		post.setHeader("Authorization", Token); 
 		
 		
 		String  imageFileName = "D:\\OOO\\Pictures\\1080.jpg" ;	 
-		imageFileName = "D:\\OOO\\Pictures\\1900.jpg" ;	
+		imageFileName = "D:\\OOO\\Pictures\\BB1883_EN-US15158286681_1920x1080.jpg" ;	
 		File file = new File(imageFileName);
 
 		MultipartEntityBuilder builder = MultipartEntityBuilder.create();         

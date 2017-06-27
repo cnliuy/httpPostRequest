@@ -48,22 +48,22 @@ public class testPost_tv_modifiUser_part1 {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		String url = "http://localhost:8080/modifylTvUser" ;
+		String url = "http://localhost:8080/testSpringMVC/modifylTvUser" ;
 		HttpPost httpPost = new HttpPost(url);		
 		
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1bmFtZTExOCIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTQ5NDkyMjk5Mjk2NywiZXhwIjoxNDk1NTI3NzkyfQ.PHm0tsqfwSEHKhX9-cCjdN_dOfIpW7w2AMX4ncxADbkPvMm7feeoLIpeunaDrYF4I2B7mg73VjLp87g4QtFLog";
+		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyNTIzIiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk1NTQzMzUxMzUzLCJleHAiOjE0OTYxNDgxNTF9.0i-GTtBqDOIwQfrSo4LKrv6lGk970P4P9eV_nDiaOamd64tK0va-jNno1gnIs9AFzpBYcvvnNSVPPXU1dH1lTA";
 		httpPost.setHeader("Authorization", Token);  	
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
 		//nvps.add(new BasicNameValuePair("uname", "uname109"));  	
 		//nvps.add(new BasicNameValuePair("passwd", "passwd1"));
 		//nvps.add(new BasicNameValuePair("phonenum", "userPhonenum123"));
 		
-		nvps.add(new BasicNameValuePair("appsts", "100")); 
-		nvps.add(new BasicNameValuePair("birthday", "1988-08-08")); 
+		nvps.add(new BasicNameValuePair("appsts", "120")); 
+		nvps.add(new BasicNameValuePair("birthday", "1989-08-08")); 
 		nvps.add(new BasicNameValuePair("clientversion", "clientversion123")); 
 		nvps.add(new BasicNameValuePair("deviceId", "deviceId123")); 
 		nvps.add(new BasicNameValuePair("gender", "ÄÐ1")); 
-		nvps.add(new BasicNameValuePair("nickname", "ÎÒ°®Äã")); 
+		nvps.add(new BasicNameValuePair("nickname", "ÎÒ°®Äã521")); 
 		nvps.add(new BasicNameValuePair("osId", "TV")); 
 		nvps.add(new BasicNameValuePair("province", "Ìì½ò")); 
 		nvps.add(new BasicNameValuePair("city", "Ìì½ò"));

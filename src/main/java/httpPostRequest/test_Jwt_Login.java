@@ -39,12 +39,12 @@ public class test_Jwt_Login {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpPost httpPost = new HttpPost("http://127.0.0.1:8080/auth");		
+		HttpPost httpPost = new HttpPost("http://60.29.181.148:5080/auth");		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 		parameters = "{\"username\":\"username7÷–Œƒ ‰»Î1\",\"password\":\"123456\"}";
-		parameters = "{\"username\":\"username12317\",\"password\":\"12345678\"}";
+		parameters = "{\"username\":\"uname111\",\"password\":\"passwd1\"}";
 		
 
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		

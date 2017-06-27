@@ -37,23 +37,25 @@ public class testPost_tv_modifiUser_part2 {
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		//---0
-		String url = "http://localhost:8080/modifylTvUserUsername" ;
+		String url = "http://localhost:5080/modifylTvUserUsername" ;
 		//---1
-		//url="http://localhost:8080/modifylTvUserPasswd";
+		url="http://localhost:5080/modifylTvUserPasswd";
 		//---2
 		//url="http://localhost:8080/modifylTvUserPhonenum";
 		HttpPost httpPost = new HttpPost(url);		
 		
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZTExNyIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTQ5NDkzNjI1NTkwMSwiZXhwIjoxNDk1NTQxMDU1fQ.rVcj_ZmoyzdQwF0lWoKMTHX-SOYvYy-g2RNEZQjhzFd9_YgOCWGznYOGDh_h5R3GZX79qEXpI9AZH5Jfxh5WHw";
+		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZTEyMzE3IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk1NDUyMjA5ODgzLCJleHAiOjE0OTYwNTcwMDl9.ek4YYsI89AyNBf8SE9vgezLTg_p7bzHpU5oL6ORafwUDKmlSECbLTMsajb-qU65N4qhmR9o6Bh25LLqApbFvwA";
+		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyNTI2MTIiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE0OTU3NjU3MjQ1NjAsImV4cCI6MTQ5NjM3MDUyNH0.0DjWyayeG2Z23NOrXIFnELu4r4oS77kRE5L9PGvfk4uycZTHy_fU995aKuTjeatWYJCC-OQS-RBcWFAIgIhK0w";
+		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyNTI2MTYiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE0OTU3NjgyMzE0MjgsImV4cCI6MTQ5NjM3MzAzMX0.5JSzcey-XqvQjH2AwZfdd00KGFN28hdX3vGTVtuKwEl83VdstuszojrmltWwD0kGP64HIVkPU5YQ5NRf2zAxGw";
 		httpPost.setHeader("Authorization", Token);  	
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
 
 		//-----0
-		nvps.add(new BasicNameValuePair("tochangeuname", "username12317")); 
+		//nvps.add(new BasicNameValuePair("tochangeuname", "username12317")); 
 		
 		//-----1
-		//nvps.add(new BasicNameValuePair("oldpasswd", "123456")); 
-		//nvps.add(new BasicNameValuePair("passwd", "12345678")); 
+		nvps.add(new BasicNameValuePair("oldpasswd", "password123")); 
+		nvps.add(new BasicNameValuePair("passwd", "12345678")); 
 		
 		//-----2
 		//nvps.add(new BasicNameValuePair("phonenum", "112233445611")); 
