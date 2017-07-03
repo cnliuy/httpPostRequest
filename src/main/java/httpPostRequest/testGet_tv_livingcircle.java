@@ -14,7 +14,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.cookie.Cookie;
-import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
@@ -22,41 +21,28 @@ import org.apache.http.util.EntityUtils;
 
 
 /**
- * 全版本的  更新关键字段 
- * 测试 新建群组
  * 
- *    groupname
- *    weight
- *    groupicontype
+ * 测试 生活圈 获取
+ * 
  *   
  *   注意 
  *   
  *   
  * */
-public class testPost_tv_addGroup {
+public class testGet_tv_livingcircle {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		//---0
-		String url = "http://localhost:8080/addGroup" ;
-		//---1
-		//url="http://localhost:8080/modifylTvUserPasswd";
-		//---2
-		//url="http://localhost:8080/modifylTvUserPhonenum";
-		HttpPost httpPost = new HttpPost(url);		
+		String url = "http://60.29.181.148:5080/livingcircle?lctype=1" ;
+		url = "http://127.0.0.1:5080/livingcircle?lctype=1" ;
+		HttpGet httpget = new HttpGet(url);		
 		
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZTEyMzE3IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk1MDAwMTIyOTcyLCJleHAiOjE0OTU2MDQ5MjJ9.6MBtTb5w15lVnUs33CJAXPdE5sAMFfGW5GNOO2Tye7VdaPtuTatSp1o7E6o2NSmDFfQD1-cx5OaThyQbeh3hoA";
-		httpPost.setHeader("Authorization", Token);  	
+		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrODYzMTYyNDI5MDA3IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk4NzMwMjc4MjYwLCJleHAiOjE0OTkzMzUwNzh9.s1lInvfwAz4U098wmq49jao0ic7zk01y5TPRRHhbv24U2wXLB_BcDKGrLLHkblNulkpfci2jR-yKwTFda4FuVA";
+		httpget.setHeader("Authorization", Token);  	
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
 
-		//-----0
- 
-		nvps.add(new BasicNameValuePair("groupname", "祖名5")); 
-		//nvps.add(new BasicNameValuePair("weight", "3")); 
-		//nvps.add(new BasicNameValuePair("groupicontype", "66"));  		
-		httpPost.setEntity(new UrlEncodedFormEntity(nvps ,"UTF-8"));
-		//httpPut.setEntity(new UrlEncodedFormEntity(nvps));
-		CloseableHttpResponse response2 = httpclient.execute(httpPost);
+
+		CloseableHttpResponse response2 = httpclient.execute(httpget);
 		//CloseableHttpResponse response2 = httpclient.execute(httpPut);
 		try {
 			

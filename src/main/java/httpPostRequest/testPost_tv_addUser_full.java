@@ -51,12 +51,12 @@ public class testPost_tv_addUser_full {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		String url = "http://localhost:8080/addFullTvUser" ;
 		 url = "http://localhost:5080/addFullTvUser" ;
-		 //url = "http://60.29.181.148:5080/addFullTvUser" ;
+		 url = "http://60.29.181.148:5080/addFullTvUser" ;
 		 
 		HttpPost httpPost = new HttpPost(url);		
 
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
-		nvps.add(new BasicNameValuePair("uname", "user123456"));  	
+		nvps.add(new BasicNameValuePair("uname", "lytesttj123456"));  	
 		nvps.add(new BasicNameValuePair("passwd", "password123"));
 		//nvps.add(new BasicNameValuePair("phonenum", "userPhonenum118"));		
 		nvps.add(new BasicNameValuePair("appsts", "100")); 

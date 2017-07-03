@@ -45,8 +45,9 @@ public class test_Jwt_Login {
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 		parameters = "{\"username\":\"username7÷–Œƒ ‰»Î1\",\"password\":\"123456\"}";
 		parameters = "{\"username\":\"uname111\",\"password\":\"passwd1\"}";
+		parameters = "{\"username\":\"+863162429007\",\"password\":\"75c1cba116f090411cea83b19ea716d9\"}";
+		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";
 		
-
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));
 		CloseableHttpResponse response2 = httpclient.execute(httpPost);
