@@ -32,6 +32,7 @@ import org.apache.http.util.EntityUtils;
 public class testPost_UploadLogs {
 	public static void main(String[] args) throws Exception {
 		String url = "http://127.0.0.1:5080/uploadfile";
+		url = "http://60.29.181.148:5080/uploadfile";
 		String fileNames = "e:\\upload1.txt;e:\\upload2.txt;e:\\123.rar";
 		testPost_UploadLogs.sendFilesPost(url, fileNames);
 	}
