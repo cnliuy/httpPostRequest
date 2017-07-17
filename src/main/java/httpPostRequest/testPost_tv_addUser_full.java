@@ -51,12 +51,12 @@ public class testPost_tv_addUser_full {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		String url = "http://localhost:8080/addFullTvUser" ;
 		 url = "http://localhost:5080/addFullTvUser" ;
-		 url = "http://60.29.181.148:5080/addFullTvUser" ;
+		 //url = "http://60.29.181.148:5080/addFullTvUser" ;
 		 
 		HttpPost httpPost = new HttpPost(url);		
 
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
-		nvps.add(new BasicNameValuePair("uname", "lytesttj123456"));  	
+		nvps.add(new BasicNameValuePair("uname", "liaocheng111"));  	
 		nvps.add(new BasicNameValuePair("passwd", "password123"));
 		//nvps.add(new BasicNameValuePair("phonenum", "userPhonenum118"));		
 		nvps.add(new BasicNameValuePair("appsts", "100")); 
@@ -66,8 +66,8 @@ public class testPost_tv_addUser_full {
 		//nvps.add(new BasicNameValuePair("gender", "男")); 
 		//nvps.add(new BasicNameValuePair("nickname", "nickname118")); 
 		nvps.add(new BasicNameValuePair("osId", "TV")); 
-		nvps.add(new BasicNameValuePair("province", "天津")); 
-		nvps.add(new BasicNameValuePair("city", "天津"));
+		nvps.add(new BasicNameValuePair("province", "山东")); 
+		nvps.add(new BasicNameValuePair("city", "聊城"));
 		//nvps.add(new BasicNameValuePair("truename", "真实姓名"));
 		//nvps.add(new BasicNameValuePair("tvaccount", "tvaccount TV账号"));
 		//nvps.add(new BasicNameValuePair("useremail", "123@163.com"));

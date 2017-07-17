@@ -38,6 +38,7 @@ public class testGet_tv_addLog {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		//---0		http://60.29.181.148:5080/
 		String url = "http://60.29.181.148:5080/wjsxOperationLog" ; 
+		 url = "http://127.0.0.1:5080/wjsxOperationLog" ; 
  	    String  s = "?usernumber=+8643182640058&osId=3&module=60400&operateType=01&opresource=ÏûÏ¢&provinceid=205&" 
  	    		+ "osVersion=4.4.4&appType=WJSX_TV&appVer=V1.0.2.200";
  	    url =url+s;
