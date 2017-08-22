@@ -1,13 +1,19 @@
 package httpPostRequest;
 
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.cookie.Cookie;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -16,41 +22,25 @@ import org.apache.http.util.EntityUtils;
 
 
 /**
- * 测试 JWT登陆 1 
+ * 全版本的Post 
  * 
- * 模拟客户端提价参数  通过Post方式
+ * 测试任务
  * 
- * 参考：
- * http://yunjiechao-163-com.iteye.com/blog/1490796 * 
- * HttpClient 模拟 ajax 提交
- * http://blog.csdn.net/majian_1987/article/details/47728769 *
- * HttpClient 通过 Post 方式发送Json数据
- * 
- * @author LY
- * {@value}
- * 
- * 返回值：
- *  HTTP/1.1 200 
- *  {
- *  	"token" : "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTQ5MzcyMzU1NzY2MywiZXhwIjoxNDk0MzI4MzU3fQ.XHaVeL94443uQk3Uy0IdV3DHA10woYqxKYeG4e4Z8fb1qTmXtZy-4oko8R_jyhWtRldYL11i6jbCpDQCfHDERQ"
- *  }
  * */
-public class test_Jwt_Login {
+public class testPost_cs_addSiderbar {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		//HttpPost httpPost = new HttpPost("http://60.29.181.148:5080/auth");		
-		HttpPost httpPost = new HttpPost("http://127.0.0.1:8080/auth");		
+
+		//-------------------------------------http://localhost:8080/lr/task/create------------------------------
+		HttpPost httpPost = new HttpPost("http://localhost:8080/adduisiderbar");
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
+		
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 		parameters = "{\"username\":\"username7中文输入1\",\"password\":\"123456\"}";
-		parameters = "{\"username\":\"uname111\",\"password\":\"passwd1\"}";
-		parameters = "{\"username\":\"+863162429007\",\"password\":\"75c1cba116f090411cea83b19ea716d9\"}";
-		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";
-		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";
-		
-		parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
+		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";		
+		parameters = "{\"content\":\"content11\",\"icolink\":\"icolink11\",\"authority\":\"admin\",\"intorder\":\"123\" }";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));
@@ -66,6 +56,7 @@ public class test_Jwt_Login {
 		} finally {
 		    response2.close();
 		}
+
 
 	}
 
