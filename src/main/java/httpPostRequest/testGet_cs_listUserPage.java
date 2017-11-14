@@ -24,19 +24,18 @@ import org.apache.http.util.EntityUtils;
 /**
  * 全版本的Post 
  * 
- * 把用户加入 组
+ * 把用户删除出 组
  * 
  * */
-public class testGet_cs_addUserIntoGroup {
+public class testGet_cs_listUserPage {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		String url = "http://60.29.181.148:5080/livingcircle?lctype=1" ;
-		url = "http://127.0.0.1:8080/groupadduser?groupid=51&username=admin5" ;
-		url = "http://127.0.0.1:8080/groupadduser?groupid=51&username=admin3" ;
+		url = "http://127.0.0.1:6080/listuser2?page=1" ;
 		HttpGet httpget = new HttpGet(url);		
 		
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
+		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjIiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE1MDQwNjIxNDUwMTAsImV4cCI6MTUwNDY2Njk0NX0.Stm95fTHni5onjEMY8C0fRDrnnYt2BwaRbDhJps-jZTZIz3IocjuKOPvnBvrTIX9BJHzp3zhpti2O406F2IIJA";
 		httpget.setHeader("Authorization", Token); 	
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
 

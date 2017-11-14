@@ -2,7 +2,6 @@ package httpPostRequest;
 
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,8 +12,8 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.cookie.Cookie;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
@@ -22,26 +21,34 @@ import org.apache.http.util.EntityUtils;
 
 
 /**
- * 全版本的Post 
+ *  
+ * 测试  TV vas 
  * 
- * 把用户加入 组
- * 
+ * 用户查询的接口规范,可以查询到用户的消费记录和订购记录
+ *  	http://202.99.114.62:35825/PORTAL/dsm    测试地址
  * */
-public class testGet_cs_addUserIntoGroup {
+public class testPost_tvvas_loginByUserId3 {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		String url = "http://60.29.181.148:5080/livingcircle?lctype=1" ;
-		url = "http://127.0.0.1:8080/groupadduser?groupid=51&username=admin5" ;
-		url = "http://127.0.0.1:8080/groupadduser?groupid=51&username=admin3" ;
-		HttpGet httpget = new HttpGet(url);		
-		
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
-		httpget.setHeader("Authorization", Token); 	
+		String methodname = "loginByUserId";
+		String url = "http://202.99.114.62:35825/PORTAL/dsm/"+methodname ;
+		HttpPost httpPost = new HttpPost(url);		
+
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
-
-
-		CloseableHttpResponse response2 = httpclient.execute(httpget);
+		//nvps.add(new BasicNameValuePair("userId", "02204194613"));  
+		nvps.add(new BasicNameValuePair("userId", "tjlt001"));		
+		nvps.add(new BasicNameValuePair("mac", "7497812C8C81")); 
+		
+		String privateKey = "The HMAC private key";
+		String data ="{\"appId\":\"98726189\"}";
+		String singstring = HMACSHA256Sign.sign(privateKey,data);
+		System.out.println("<"+singstring+">");	 
+		//--httpPost.setHeader("signature", singstring);  
+		
+		httpPost.setEntity(new UrlEncodedFormEntity(nvps));
+		//httpPut.setEntity(new UrlEncodedFormEntity(nvps));
+		CloseableHttpResponse response2 = httpclient.execute(httpPost);
 		//CloseableHttpResponse response2 = httpclient.execute(httpPut);
 		try {
 			

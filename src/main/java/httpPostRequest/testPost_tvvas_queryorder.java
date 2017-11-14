@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,28 +23,34 @@ import org.apache.http.util.EntityUtils;
 
 
 /**
- * 全版本的Post 
+ * Tv vas
  * 
- * 测试任务
+ *   订单状态查询  1.34
  * 
  * 
- * @deprecated
+ * -------------------Wed Oct 11 19:33:41 CST 2017------------------------------------------
+ * {"result":"990000","payTradeID":"1122434","tradeID":"1122434","resultDesc":"sucess11193311","authenticator":"ygpqGA9Rf4Xs8jgGR7/M9bJkkGTrC1uEsSvyrZxRVX0="}
+ * -------------------Wed Oct 11 19:33:59 CST 2017------------------------------------------
+ * 
  * 
  * */
-public class testPost_cs_addUserRoles {
+public class testPost_tvvas_queryorder {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 		//-------------------------------------http://localhost:8080/adduser------------------------------
-		HttpPost httpPost = new HttpPost("http://localhost:8080/adduserrole");
-		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
-		httpPost.setHeader("Accept", "application/json");  
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
-		httpPost.setHeader("Authorization", Token);  
+		System.out.println("-------------------"+new Date()+"------------------------------------------");
+		HttpPost httpPost = new HttpPost("http://127.0.0.1:8080/queryTvOrderStatus");
+		httpPost = new HttpPost("http://202.99.114.136:10021/queryTvOrderStatus");
 		
-		String parameters = "{\"username\":\"usertest\",\"role\":\"1\"}";		
-		//parameters = "{\"groupname\":\"测试组1\" }";
+		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
+		//httpPost.setHeader("Accept", "application/json");  
+		//String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
+		//httpPost.setHeader("Authorization", Token);  
+		
+		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
+		parameters = "{\"sessionId\":\"sessionId\",\"orderId\":\"orderId4\",\"areaCode\":\"###\",\"fee\":10}";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));
@@ -59,6 +66,7 @@ public class testPost_cs_addUserRoles {
 		} finally {
 		    response2.close();
 		}
+		System.out.println("-------------------"+new Date()+"------------------------------------------");
 
 
 	}

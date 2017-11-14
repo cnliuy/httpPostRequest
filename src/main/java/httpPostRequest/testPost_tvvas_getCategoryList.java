@@ -13,6 +13,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -22,44 +23,45 @@ import org.apache.http.util.EntityUtils;
 
 
 /**
- * 全版本的Post 
- * 
- * 测试任务
- * 
- * 
- * @deprecated
+ *  
+ * 测试  TV vas 
+ *1.4.	获取应用的分类
  * 
  * */
-public class testPost_cs_addUserRoles {
+public class testPost_tvvas_getCategoryList {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
+		String methodname = "getCategoryList";
+		String url = "http://202.99.114.62:35825/PORTAL/dsm/"+methodname ;
+		HttpPost httpPost = new HttpPost(url);		
 
-		//-------------------------------------http://localhost:8080/adduser------------------------------
-		HttpPost httpPost = new HttpPost("http://localhost:8080/adduserrole");
-		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
-		httpPost.setHeader("Accept", "application/json");  
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
-		httpPost.setHeader("Authorization", Token);  
+		String  parameters;
 		
-		String parameters = "{\"username\":\"usertest\",\"role\":\"1\"}";		
-		//parameters = "{\"groupname\":\"测试组1\" }";
+		parameters = "{\"parentId\":\"01\"}";
 		
+		String sessionId = "4AB6CE44467A70F6E6EB32CED010CFE8";
+		sessionId = testPost_tvvas_SessionId.SessionId;
+		
+		
+		//String userToken = "0E41A9B0616132F78E699C0BBE7C3230";
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
-		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));
+		//httpPost.setHeader("sessionId", sessionId); 
+		//httpPost.setHeader("userToken", userToken); 
+		//httpPost.setHeader("Cookie", "JSESSIONID=" + DSMGlobal.sessionId);
+		httpPost.setHeader("Cookie", "JSESSIONID=" + sessionId);
 		CloseableHttpResponse response2 = httpclient.execute(httpPost);
-		try {	    
+		
+		try {
+			
+		    System.out.println(response2.getStatusLine());		    
 		    HttpEntity entity2 = response2.getEntity();
 		    String response2txt=EntityUtils.toString(entity2);
-		    //System.out.println(response2.getStatusLine());
 		    System.out.println(response2txt);
-		    // do something useful with the response body
-		    // and ensure it is fully consumed
-		    //EntityUtils.consume(entity2);
+
 		} finally {
 		    response2.close();
 		}
-
 
 	}
 

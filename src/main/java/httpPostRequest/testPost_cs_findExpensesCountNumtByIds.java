@@ -24,26 +24,27 @@ import org.apache.http.util.EntityUtils;
 /**
  * 全版本的Post 
  * 
- * 测试任务
- * 
- * 
- * @deprecated
+ * 统计资费和
  * 
  * */
-public class testPost_cs_addUserRoles {
+public class testPost_cs_findExpensesCountNumtByIds {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 		//-------------------------------------http://localhost:8080/adduser------------------------------
-		HttpPost httpPost = new HttpPost("http://localhost:8080/adduserrole");
+		HttpPost httpPost = new HttpPost("http://localhost:8080/findExpensesTypeCountNumtByIds");
+		httpPost = new HttpPost("http://localhost:8080/findapplicationlistByIds");
+		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
+		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzY0NTg1MTgyOSwiZXhwIjoxNTA0MjUwNjUxfQ.4i_EXUKWNESruqtO9BMK9i2msusQZIETgbP1ADcQHsA6xeom9V6ZULJQMzk3W8KYFAAYr98KclkqIEni6lW52A";
 		httpPost.setHeader("Authorization", Token);  
 		
-		String parameters = "{\"username\":\"usertest\",\"role\":\"1\"}";		
-		//parameters = "{\"groupname\":\"测试组1\" }";
+		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
+		parameters = "{\"username\":\"username7中文输入1\",\"password\":\"123456\"}";
+		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";		
+		parameters = "{\"ids\":\"2,3,4\"}";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));

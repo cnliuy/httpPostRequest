@@ -24,16 +24,17 @@ import org.apache.http.util.EntityUtils;
 /**
  * 全版本的Post 
  * 
- * 把用户加入 组
+ * 显示侧边栏
  * 
  * */
-public class testGet_cs_addUserIntoGroup {
+public class testGet_cs_changeUserRole {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		String url = "http://60.29.181.148:5080/livingcircle?lctype=1" ;
-		url = "http://127.0.0.1:8080/groupadduser?groupid=51&username=admin5" ;
-		url = "http://127.0.0.1:8080/groupadduser?groupid=51&username=admin3" ;
+		url = "http://127.0.0.1:8080/adduserrole?username=usertest&role=23" ;
+		url = "http://127.0.0.1:8080/changeuserrole?username=admin5&role=16" ;
+		//url = "http://127.0.0.1:8080/changeuserrole?username=admin&role=1" ;
 		HttpGet httpget = new HttpGet(url);		
 		
 		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";

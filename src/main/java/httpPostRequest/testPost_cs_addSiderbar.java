@@ -36,11 +36,15 @@ public class testPost_cs_addSiderbar {
 		HttpPost httpPost = new HttpPost("http://localhost:8080/adduisiderbar");
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
+
+		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
+		httpPost.setHeader("Authorization", Token);  
 		
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 		parameters = "{\"username\":\"username7中文输入1\",\"password\":\"123456\"}";
 		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";		
 		parameters = "{\"content\":\"content11\",\"icolink\":\"icolink11\",\"authority\":\"admin\",\"intorder\":\"123\" }";
+		parameters = "{\"content\":\"菜单展示2\",\"link\":\"http://www.baidu.com\",\"authority\":\"ROLE_CSUSER,\",\"intorder\":\"100\" }";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));

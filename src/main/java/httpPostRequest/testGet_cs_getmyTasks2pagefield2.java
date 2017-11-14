@@ -22,22 +22,29 @@ import org.apache.http.util.EntityUtils;
 
 
 /**
- * 全版本的Post 
+ *  查询 当前任务 并排序
+ *    城市  排序 
  * 
- * 把用户加入 组
  * 
+ * 
+ *    	cjsj 创建时间
+ *  	khmc 客户名称
+ *  	city 城市
+ *  	phone 投诉号码
+ *  	wcqx  完成期限时间
  * */
-public class testGet_cs_addUserIntoGroup {
+public class testGet_cs_getmyTasks2pagefield2 {
 
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		String url = "http://60.29.181.148:5080/livingcircle?lctype=1" ;
-		url = "http://127.0.0.1:8080/groupadduser?groupid=51&username=admin5" ;
-		url = "http://127.0.0.1:8080/groupadduser?groupid=51&username=admin3" ;
+		url = "http://127.0.0.1:6080/gogetmytasklistbyfieldandpage?page=0&field=city" ;
+		url = "http://127.0.0.1:6080/gogetmytasklistbyfieldandpage?page=0&field=wcqx" ;
 		HttpGet httpget = new HttpGet(url);		
 		
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
-		httpget.setHeader("Authorization", Token); 	
+		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjUiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE1MDI3NjU3Njk1MDQsImV4cCI6MTUwMzM3MDU2OX0.umHXGAVggBrjfMi8rzZuj1IIcXd2_Q8upGT04tVvtaoFP_DYEA-fHq96fSjTAlDVIRr3rMua0E2w9jtY6fZ5tA";
+		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjc3VzZXIiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE1MDQ4NjQ0OTY4MzksImV4cCI6MTUwNTQ2OTI5Nn0.3zjyTt_0tzkZaDDQtGcvs4NJQLeWpCb7fNSBOGAxecBXLDaphbPMhkbhj5nnwlUDciYjLBV6lgMfFIBbVgQ64w";
+		httpget.setHeader("Authorization", Token);  	
 		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
 
 

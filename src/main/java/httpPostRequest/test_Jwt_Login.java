@@ -40,7 +40,7 @@ public class test_Jwt_Login {
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		//HttpPost httpPost = new HttpPost("http://60.29.181.148:5080/auth");		
-		HttpPost httpPost = new HttpPost("http://127.0.0.1:8080/auth");		
+		HttpPost httpPost = new HttpPost("http://127.0.0.1:6080/auth");		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
@@ -50,7 +50,7 @@ public class test_Jwt_Login {
 		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";
 		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";
 		
-		parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
+		parameters = "{\"username\":\"kfuser01\",\"password\":\"123456\"}";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));
