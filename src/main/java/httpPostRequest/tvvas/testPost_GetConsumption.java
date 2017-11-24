@@ -38,6 +38,7 @@ public class testPost_GetConsumption {
 
 
 		String serviceId = "cutv201503182011102";
+		   	   serviceId="088111116881";
 		String userProvince = "13";
 		String month = "201711";
 		String outSource = "1";
@@ -54,7 +55,8 @@ public class testPost_GetConsumption {
 		//sign = "12312312111111232131231231231231";  //校验是否需要真的签名
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 	 
-		String url = "http://202.99.114.62:10000/getConsumption" ;
+		//String url = "http://202.99.114.62:10000/getConsumption" ;
+		String url = "http://"+ConstanStr.baseurl_zs+"/getConsumption" ;
 		HttpPost httpPost = new HttpPost(url);	
 		
 		/**

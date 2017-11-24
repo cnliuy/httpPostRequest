@@ -18,11 +18,12 @@ import org.apache.http.util.EntityUtils;
 
 import httpPostRequest.tools.encryptUtil;
 
-public class testPost_GetOrders {
+public class testPost_QueryUserInfo {
 	
 	
 	/**
-	 * 1.26 	获取已订购产品列表接口
+	 * 《TVVAS APIGW与第三方应用接口规范》
+	 * 1.5  查询用户信息
 	 * 
 	 * json 传值
 	 * 
@@ -33,41 +34,32 @@ public class testPost_GetOrders {
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//定义格式，不显示毫秒		 
 		String timestampstr = df.format(new Date());
 		
-		//sha256(<privgetConsumption
-		//<serviceId>+<userProvince>+<type >+<outsource > 
-		//timestamp是14
-		String serviceId = "cutv201503182011102";
-			   serviceId="088111116881";
-			   
-		String userProvince = "13";
-		String type = "2";
-		String outSource = "1";
-		
 		 
-		String message = serviceId+userProvince+type+outSource;
+		//宽带                         		iptv
+		//02202573097          088111116881
 		
-		String sign = "";
-		try {
-			sign = encryptUtil.messageSign(message, privateKey, timestampstr);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		//sign = "12312312111111232131231231231231";  //校验是否需要真的签名
+		String broadbandAccount = "02202573097";
+		//String serviceId = "cutv201503182011102";
+		String userProvince = "13";
+		 
+	
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 	 
-		String url = "http://"+ConstanStr.baseurl_zs+"/getOrders" ;
-		HttpPost httpPost = new HttpPost(url);		
-
-		String  parameters = "{\"serviceId\": \""+serviceId+"\","
-				+ "\"userProvince\": \""+userProvince+"\","
-				+ "\"type\": \""+type+"\","
-				+ "\"outSource\": \""+outSource+"\","
-				+ "\"signature\": \""+sign+"\"}";
+		String url = "http://"+ConstanStr.baseurl_zs+"/queryUserInfo" ;
+		HttpPost httpPost = new HttpPost(url);	
 		
-		 
-    	//parameters = "{\"userId\":\"088111116881\",\"mac\":\"60EB69930CB2\"}";
+		/**
+		 * 
+		 * {"serviceId":"cutv201503182510007","source":"1","userProvince":"13","broadbandAccount":""}
+		 * { "userProvince":"13","broadbandAccount":"02202573097"}
+		 * 
+		 * */
+		
+		String  parameters = "{\"userProvince\": \""+userProvince+"\","
+				+ "\"broadbandAccount\": \""+broadbandAccount+"\","
+				+ "}";
 		System.out.println("url:"+url);
-		System.out.println("请求包:"+parameters);
+		System.out.println("请求包:"+parameters);		
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 
