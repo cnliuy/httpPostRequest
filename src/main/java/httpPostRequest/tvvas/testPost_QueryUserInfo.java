@@ -39,8 +39,14 @@ public class testPost_QueryUserInfo {
 		//02202573097          088111116881
 		
 		String broadbandAccount = "02202573097";
+		broadbandAccount = "053901803259";
+		broadbandAccount = "02200141763";
+		
 		//String serviceId = "cutv201503182011102";
 		String userProvince = "13";
+		userProvince = "17";
+		
+		userProvince = "13";
 		 
 	
 		CloseableHttpClient httpclient = HttpClients.createDefault();

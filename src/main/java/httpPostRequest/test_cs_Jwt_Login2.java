@@ -40,7 +40,10 @@ public class test_cs_Jwt_Login2 {
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		//HttpPost httpPost = new HttpPost("http://60.29.181.148:5080/auth");		
-		HttpPost httpPost = new HttpPost("http://127.0.0.1:6080/auth");		
+		//HttpPost httpPost = new HttpPost("http://127.0.0.1:6080/auth");		
+		HttpPost httpPost = new HttpPost("http://202.99.114.136:10015/auth");		
+		
+		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
@@ -50,7 +53,7 @@ public class test_cs_Jwt_Login2 {
 		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";
 		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";
 		
-		parameters = "{\"username\":\"csuser\",\"password\":\"123456\"}";
+		parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));

@@ -39,11 +39,24 @@ public class testPost_GetConsumption {
 
 		String serviceId = "cutv201503182011102";
 		   	   serviceId="088111116881";
+		   	   serviceId="02200141763" ;
 		String userProvince = "13";
-		String month = "201711";
+		String month = "201708";
 		String outSource = "1";
 		
+		serviceId = "053901806146";	   	  
+	    userProvince = "17";
+	    month = "201608";
+	      
+		serviceId = "088111864369";	   	  
+	    userProvince = "13";
+	    month = "201709";
 		 
+//		serviceId = "02200141763";	   	  
+//	    userProvince = "13";
+//	    month = "201709";
+	    
+	    
 		String message = serviceId+userProvince+month+outSource;
 		
 		String sign = "";
