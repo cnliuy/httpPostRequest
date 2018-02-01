@@ -26,6 +26,7 @@ public class test_tvyyt_checksingleorder {
 	     
 			String url = "http://127.0.0.1:6088/checkSingleOrder" ;
 			url = "http://60.29.181.148:6088/checkSingleOrder" ;
+			url = "http://127.0.0.1:6088/checkSingleOrder" ;
 			
 			HttpPost httpPost = new HttpPost(url);				
 			CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -42,7 +43,7 @@ public class test_tvyyt_checksingleorder {
 			String str = df.format(now); 
 			
 			String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
-			parameters = "{\"reqNo\":\"1338924\",\"channelCode\":\"501\",\"timeStamp\":\""+str+"\"}";
+			parameters = "{\"reqNo\":\"1339735\",\"channelCode\":\"501\",\"timeStamp\":\""+str+"\"}";
  
 			
 			httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
