@@ -40,7 +40,7 @@ public class testPost_apiway3 {
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
 		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZTEyMzE3IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk1MDAwMTIyOTcyLCJleHAiOjE0OTU2MDQ5MjJ9.6MBtTb5w15lVnUs33CJAXPdE5sAMFfGW5GNOO2Tye7VdaPtuTatSp1o7E6o2NSmDFfQD1-cx5OaThyQbeh3hoA";
-		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUyMTEwMTMxNzIxMSwiZXhwIjoxNTIxMTA4NTE3fQ.iJWnlZMBwwQflshd2N9GS4OautWs6ngXVk0SoCrTsX0B2MD1KBKKhLM6pyQD-ZAzIYEX4RqPzfK7iPAPym8oPw";
+		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUyMTE5ODYyMjA5NSwiZXhwIjoxNTIxMjA1ODIyfQ.M3Lfq1kfsUwCTV8jAbEfRgYb5I_xLSf3JvbBynvT8y2sX_9rGEl8jnscAWwteFh2IWqjhG7wgF-QEt7QqXoTEw";
 		
 		httpPost.setHeader("Authorization", Token);  	
 		String currentpage = "12haha 哈";

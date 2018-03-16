@@ -26,31 +26,32 @@ import org.apache.http.util.EntityUtils;
  * 
  * 
  * */
-public class testPost_apiway2 {
+public class testPost_apiway4_getToken {
 
 	public static void main(String[] args) throws Exception {		
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		//---0
 		String url = "http://127.0.0.1:8762/api/u/u/test2" ;		//?aaa=123&ffd=我的&dfa=12312wwww
-		url= "http://127.0.0.1:8762/dealpost";
-		url = "http://127.0.0.1:8762/api/u/u/test2" ;
-		HttpPost httpPost = new HttpPost(url);		
+		url = "http://127.0.0.1:8762/dealpost";
+		url = "http://127.0.0.1:8762/toGetAuttoken" ;
+		HttpPost httpPost = new HttpPost(url);	
 		
+		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
+		httpPost.setHeader("Accept", "application/json");  
 		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZTEyMzE3IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk1MDAwMTIyOTcyLCJleHAiOjE0OTU2MDQ5MjJ9.6MBtTb5w15lVnUs33CJAXPdE5sAMFfGW5GNOO2Tye7VdaPtuTatSp1o7E6o2NSmDFfQD1-cx5OaThyQbeh3hoA";
-		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUyMTA5Mzc0NzM1MSwiZXhwIjoxNTIxMTAwOTQ3fQ.lCLsCmlDkI6aM-XJyo6r_del_YW6zdGIuYBkKtWELxaG3MNVZDpQita-UEX2w36pbnL6sMIQHGVoDQFK8SlDmg";
-		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUyMTE5ODYyMjA5NSwiZXhwIjoxNTIxMjA1ODIyfQ.M3Lfq1kfsUwCTV8jAbEfRgYb5I_xLSf3JvbBynvT8y2sX_9rGEl8jnscAWwteFh2IWqjhG7wgF-QEt7QqXoTEw";
-		
-		httpPost.setHeader("Authorization", Token);  	
-		List <NameValuePair> nvps = new ArrayList <NameValuePair>();		
+		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUyMTEwMTMxNzIxMSwiZXhwIjoxNTIxMTA4NTE3fQ.iJWnlZMBwwQflshd2N9GS4OautWs6ngXVk0SoCrTsX0B2MD1KBKKhLM6pyQD-ZAzIYEX4RqPzfK7iPAPym8oPw";
+		Token = "";
 
-		//-----0
-		nvps.add(new BasicNameValuePair("bbb", "测试niah你们那o a我好啊 post123")); 
+		//httpPost.setHeader("Authorization", Token);  	
+		String username = "admin";
+		String password = "adminpasswd";
+		String  parameters = "{\"username\":\""+username+ "\",\"password\":\""+password+"\" }";
+		System.out.println(parameters);
+		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		
-		httpPost.setEntity(new UrlEncodedFormEntity(nvps ,"UTF-8"));
-	
 		CloseableHttpResponse response2 = httpclient.execute(httpPost);
-		//CloseableHttpResponse response2 = httpclient.execute(httpPut);
+		System.out.println("----------------访问--------------------");
 		try {
 			
 		    System.out.println(response2.getStatusLine());		    
@@ -61,7 +62,8 @@ public class testPost_apiway2 {
 		} finally {
 		    response2.close();
 		}
-
+		
+		 
 	}
 
 }
