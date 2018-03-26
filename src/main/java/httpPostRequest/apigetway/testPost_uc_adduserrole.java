@@ -26,7 +26,7 @@ import org.apache.http.util.EntityUtils;
  * 
  * 
  * */
-public class testPost_apiway3 {
+public class testPost_uc_adduserrole {
 
 	public static void main(String[] args) throws Exception {		
 		
@@ -34,8 +34,8 @@ public class testPost_apiway3 {
 		//---0
 		String url = "http://127.0.0.1:8762/api/u/u/test2" ;		//?aaa=123&ffd=我的&dfa=12312wwww
 		url= "http://127.0.0.1:8762/dealpost";
-		url = "http://127.0.0.1:8762/api/u/u/test3" ;
-		
+		url = "http://127.0.0.1:8763/api/u/u/test3" ;
+		url = "http://127.0.0.1:8763/addUserRoleRel" ;
 		HttpPost httpPost = new HttpPost(url);	
 		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
@@ -45,8 +45,13 @@ public class testPost_apiway3 {
 		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUyMTY4MjgwNzAwNCwiZXhwIjoxNTIxNjkwMDA3fQ.13FCjG9HNIIFUWpFYWYhp9fVr4gaArZRnQ2YL70NOYBBjE4ptOFrNaVfEsBIbmsF09zJJnfLWqbPc-HIS19jKQ";
 		
 		httpPost.setHeader("Authorization", Token);  	
-		String currentpage = "12haha 哈";
-		String  parameters = "{\"currentpage\":\""+currentpage+ "\" }";
+ 
+		String userid = "2";
+		String roleid = "9";
+		
+ 	     
+		String  parameters = "{\"roleid\":\""+roleid+ "\",\"userid\":\""+userid+"\" }";
+		
 		System.out.println(parameters);
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		
