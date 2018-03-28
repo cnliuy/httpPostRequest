@@ -16,20 +16,20 @@ import org.apache.http.util.EntityUtils;
 
 
 /**
- * ²âÊÔ JWTµÇÂ½ 1 
+ * ï¿½ï¿½ï¿½ï¿½ JWTï¿½ï¿½Â½ 1 
  * 
- * Ä£Äâ¿Í»§¶ËÌá¼Û²ÎÊý  Í¨¹ýPost·½Ê½
+ * Ä£ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Û²ï¿½ï¿½ï¿½  Í¨ï¿½ï¿½Postï¿½ï¿½Ê½
  * 
- * ²Î¿¼£º
+ * ï¿½Î¿ï¿½ï¿½ï¿½
  * http://yunjiechao-163-com.iteye.com/blog/1490796 * 
- * HttpClient Ä£Äâ ajax Ìá½»
+ * HttpClient Ä£ï¿½ï¿½ ajax ï¿½á½»
  * http://blog.csdn.net/majian_1987/article/details/47728769 *
- * HttpClient Í¨¹ý Post ·½Ê½·¢ËÍJsonÊý¾Ý
+ * HttpClient Í¨ï¿½ï¿½ Post ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Jsonï¿½ï¿½ï¿½ï¿½
  * 
  * @author LY
  * {@value}
  * 
- * ·µ»ØÖµ£º
+ * ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½
  *  HTTP/1.1 200 
  *  {
  *  	"token" : "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTQ5MzcyMzU1NzY2MywiZXhwIjoxNDk0MzI4MzU3fQ.XHaVeL94443uQk3Uy0IdV3DHA10woYqxKYeG4e4Z8fb1qTmXtZy-4oko8R_jyhWtRldYL11i6jbCpDQCfHDERQ"
@@ -47,14 +47,14 @@ public class test_cs_Jwt_Login2 {
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
-		parameters = "{\"username\":\"username7ÖÐÎÄÊäÈë1\",\"password\":\"123456\"}";
+		parameters = "{\"username\":\"username7ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1\",\"password\":\"123456\"}";
 		parameters = "{\"username\":\"uname111\",\"password\":\"passwd1\"}";
 		parameters = "{\"username\":\"+863162429007\",\"password\":\"75c1cba116f090411cea83b19ea716d9\"}";
 		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";
 		parameters = "{\"username\":\"+862285971073\",\"password\":\"bbb721713210ae4d1f590a6641039a29\"}";
 		
 		parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
-		
+		parameters = "{\"username\":\"kfuser01\",\"password\":\"123456\"}";
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));
 		CloseableHttpResponse response2 = httpclient.execute(httpPost);
