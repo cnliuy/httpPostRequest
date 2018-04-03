@@ -35,6 +35,9 @@ public class testPost_apiway4_getToken {
 		String url = "http://127.0.0.1:8762/api/u/u/test2" ;		//?aaa=123&ffd=我的&dfa=12312wwww
 		url = "http://127.0.0.1:8762/dealpost";
 		url = "http://127.0.0.1:8762/toGetAuttoken" ;
+		
+		url = "http://202.99.114.63:18013/toGetAuttoken" ;
+		
 		HttpPost httpPost = new HttpPost(url);	
 		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
