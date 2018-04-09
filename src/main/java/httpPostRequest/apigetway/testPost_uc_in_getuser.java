@@ -22,42 +22,46 @@ import org.apache.http.util.EntityUtils;
 
 
 /**
- *  
+ *  内部获取用户
  * 
  * 
  * */
-public class testPost_apiway4_getToken {
+public class testPost_uc_in_getuser {
 
 	public static void main(String[] args) throws Exception {		
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		//---0
 		String url = "http://127.0.0.1:8762/api/u/u/test2" ;		//?aaa=123&ffd=我的&dfa=12312wwww
-		url = "http://127.0.0.1:8762/dealpost";
-		url = "http://127.0.0.1:8762/toGetAuttoken" ;		
-		url = "http://202.99.114.63:18013/toGetAuttoken" ;
+		url= "http://127.0.0.1:8762/dealpost";
+		url = "http://127.0.0.1:8763/api/u/u/test3" ;
+		url = "http://127.0.0.1:8763/addRole" ;
 		
-		url = "http://127.0.0.1:8090/toGetAuttoken" ;
-		//url = "http://127.0.0.1:9080/toGetAuttoken" ;
+		
+		url = "http://127.0.0.1:8763/finduserByUsername" ;
+		
 		HttpPost httpPost = new HttpPost(url);	
 		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
 		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZTEyMzE3IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNDk1MDAwMTIyOTcyLCJleHAiOjE0OTU2MDQ5MjJ9.6MBtTb5w15lVnUs33CJAXPdE5sAMFfGW5GNOO2Tye7VdaPtuTatSp1o7E6o2NSmDFfQD1-cx5OaThyQbeh3hoA";
-		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUyMTEwMTMxNzIxMSwiZXhwIjoxNTIxMTA4NTE3fQ.iJWnlZMBwwQflshd2N9GS4OautWs6ngXVk0SoCrTsX0B2MD1KBKKhLM6pyQD-ZAzIYEX4RqPzfK7iPAPym8oPw";
+		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUyMTU0MzQzNjg4OSwiZXhwIjoxNTIxNTUwNjM2fQ.m9oMNC83aFDeYugjyyI1UR1d41mDSXOtPNgo1b-161lM81Osrab5cWApkndpG-BNZ7ktf9KmIYdUfOhgwVqmOg";
+		Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUyMTY4MjgwNzAwNCwiZXhwIjoxNTIxNjkwMDA3fQ.13FCjG9HNIIFUWpFYWYhp9fVr4gaArZRnQ2YL70NOYBBjE4ptOFrNaVfEsBIbmsF09zJJnfLWqbPc-HIS19jKQ";
 		Token = "";
-
-		//httpPost.setHeader("Authorization", Token);  	
-		String username = "teuser";
-		String password = "tepasswd";
-		username = "username";
-		password = "password";
-		String  parameters = "{\"username\":\""+username+ "\",\"password\":\""+password+"\" }";
+		httpPost.setHeader("Authorization", Token);  	 
+		
+		
+		String parm = "username";
+		String parm2 = "tepasswd";
+		String parm3 = "测试用户";	     
+		String  parameters = "{\"username\":\""+parm+ "\"}";
+		
 		System.out.println(parameters);
-		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
+		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));	
+		 
 		
 		CloseableHttpResponse response2 = httpclient.execute(httpPost);
-		System.out.println("----------------访问--------------------");
+		
 		try {
 			
 		    System.out.println(response2.getStatusLine());		    
