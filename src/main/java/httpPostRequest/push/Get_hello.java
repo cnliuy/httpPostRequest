@@ -26,8 +26,10 @@ public class Get_hello {
 		httpGet.addHeader("Content-Type","application/json; charset=utf-8");
 		httpGet.setHeader("Accept", "application/json");  
 		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJleHAiOjE1MzUwMTUwODN9.08pliX5tZe3WYk3ZfCqK7JLOA_fL5Jj7dEnLDXYQinnD3iieB20ZaJRYXMXddIGJL8DGPu7MKFrXHihoUunWgQ";
+		//Token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJleHAiOjE1MzUwMTYxOTd9.CiLel59QtzZ86WjeVL_2fEKcnOEyl-sgPcuzGi7qN2wft-QNnjto_MPIPJRF9z2rRZ8_7q8uhQDgRl5lHwQulQ";
 		httpGet.setHeader("Authorization", Token);  
-		
+		//{"Authorization":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJleHAiOjE1MzUwMTYxOTd9.CiLel59QtzZ86WjeVL_2fEKcnOEyl-sgPcuzGi7qN2wft-QNnjto_MPIPJRF9z2rRZ8_7q8uhQDgRl5lHwQulQ"}
+
 
 		
 		 	
