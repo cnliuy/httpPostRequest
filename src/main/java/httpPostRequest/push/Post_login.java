@@ -30,7 +30,7 @@ public class Post_login {
 		
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 		
-		parameters = "{\"username\":\"admin1\",\"password\":\"password\"}";
+		parameters = "{\"username\":\"admin1\",\"password\":\"password1\"}";
 		//parameters = "{\"username\":\"admin1\",\"password\":\"$2a$10$3DYbbsL94OFlV6McoKS8V./E7oT5p9bTeMymmWPeUB3wo7wX0kssC\"}";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		

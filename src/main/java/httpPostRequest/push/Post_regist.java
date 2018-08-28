@@ -29,7 +29,7 @@ public class Post_regist {
 		
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 	
-		parameters = "{\"username\":\"admin1\",\"password\":\"password\"}";
+		parameters = "{\"username\":\"admin2\",\"password\":\"password\"}";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 		//httpPost.setEntity(new HttpEntity);setRequestEntity(new StringEntity("{\"username\":\"admin\",\"password\":\"admin\"}","","UTF-8"));
