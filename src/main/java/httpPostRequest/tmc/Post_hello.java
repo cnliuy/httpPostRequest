@@ -25,12 +25,12 @@ public class Post_hello {
 		HttpPost httpPost = new HttpPost("http://localhost:6080/hello");
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
-		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjAxMDExOTg3MDUwNjMwMjFfMTg2MjAwMDcxMjIiLCJleHAiOjE1Mzc1OTc1NjB9.9Kw15y5MzejjuvLhPUtrL2sFcY-WWYCZrvwrnw2NMaGwMwEp4-bqivXH34RGKXpO1dlu9oc9eUtmd1sm3rwnrg";
+		String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzNjI4NjYxOTk5MDkyM18xMjM0NTY3ODkxMSIsImV4cCI6MTUzODE4MjE3OH0.cvT_t1oQH6L2wuFlOKBxMRwgTP5VEriKjO7twvjksdoFDHVqTyQUc0EOJsn4_9yDy5MSbz_tmSp9LZcwhPkz4g";
 		httpPost.setHeader("Authorization", "token-"+ Token);  
 		
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 		
-		parameters = "{\"username\":\"120101198705063021_18620007122\",\"phonenum\":\"18620007122\",\"smscode\":\"1221\"}";
+
 		parameters = "";
 		//parameters = "{\"username\":\"admin1\",\"password\":\"$2a$10$3DYbbsL94OFlV6McoKS8V./E7oT5p9bTeMymmWPeUB3wo7wX0kssC\"}";
 		

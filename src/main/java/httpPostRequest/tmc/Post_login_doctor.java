@@ -16,7 +16,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-public class Post_login {
+public class Post_login_doctor {
 	
 
 	public static void main(String[] args) throws Exception {
@@ -32,9 +32,8 @@ public class Post_login {
 		
 		parameters = "{\"username\":\"120101198705063021_18620007122\",\"phonenum\":\"18620007122\",\"smscode\":\"1221\",\"usertype\":\"1\"}";
 		
-		parameters = "" + 
-				"{\"username\":\"36286619990923_12345678911\",\"phonenum\":\"12345678911\",\"smscode\":\"1221\",\"usertype\":\"1\"}" + 
-				"";
+		parameters = "{\"username\":\"12345678924\",\"usertype\":\"10\"}	" ; 
+			
 		//parameters = "{\"username\":\"admin1\",\"password\":\"$2a$10$3DYbbsL94OFlV6McoKS8V./E7oT5p9bTeMymmWPeUB3wo7wX0kssC\"}";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
