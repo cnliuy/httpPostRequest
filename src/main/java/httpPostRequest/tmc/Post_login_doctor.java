@@ -25,6 +25,7 @@ public class Post_login_doctor {
 		HttpPost httpPost = new HttpPost("http://localhost:6880/login2"); //login2 测试方式 只会  打印出来 请求
 		httpPost = new HttpPost("http://localhost:6880/login");//直接登陆
 		//httpPost = new HttpPost("http://202.99.114.63:18029/login");
+		httpPost = new HttpPost("http://202.99.114.63:18029/login");
 		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
