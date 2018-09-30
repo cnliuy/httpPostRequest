@@ -43,6 +43,8 @@ public class JMSConsumer {
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             //消息目的地
             Destination destination = session.createQueue("hello1");
+            destination = session.createQueue("12345678912.queue");
+            
             //destination = session.createQueue("promoteAct");
             
             
