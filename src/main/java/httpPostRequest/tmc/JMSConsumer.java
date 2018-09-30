@@ -9,7 +9,11 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
-
+/**
+ * mq 消费者
+ * 
+ * ActiveMQ
+ * */
 public class JMSConsumer {
 	//默认连接用户名
     //private static final String USERNAME = ActiveMQConnection.DEFAULT_USER;

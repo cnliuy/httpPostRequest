@@ -13,7 +13,11 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
-
+/**
+ * mq 生产者
+ * 
+ * ActiveMQ
+ * */
 public class JMSProducer {
 	//默认连接用户名
     private static final String USERNAME = "tvylmq";//ActiveMQConnection.DEFAULT_USER
