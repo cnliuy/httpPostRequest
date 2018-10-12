@@ -16,13 +16,20 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-public class Post_login {
+public class Post_login_tv {
 	
 
 	public static void main(String[] args) throws Exception {
+		
+		String smscode = "3486";
+		
+		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 		HttpPost httpPost = new HttpPost("http://localhost:6080/login");
+		httpPost = new HttpPost("http://211.94.218.245:9080/login");
+		
+		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
 		//String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
@@ -33,8 +40,10 @@ public class Post_login {
 		parameters = "{\"username\":\"120101198705063021_18620007122\",\"phonenum\":\"18620007122\",\"smscode\":\"1221\",\"usertype\":\"1\"}";
 		
 		parameters = "" + 
-				"{\"username\":\"36286619990923_12345678911\",\"phonenum\":\"12345678911\",\"smscode\":\"1221\",\"usertype\":\"1\"}" + 
+				"{\"username\":\"123456123456123456_15620011620\",\"phonenum\":\"15620011620\",\"smscode\":\""+smscode+"\",\"usertype\":\"1\"}" + 
 				"";
+		
+		System.out.println(parameters);
 		//parameters = "{\"username\":\"admin1\",\"password\":\"$2a$10$3DYbbsL94OFlV6McoKS8V./E7oT5p9bTeMymmWPeUB3wo7wX0kssC\"}";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		

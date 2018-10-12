@@ -26,6 +26,9 @@ public class Post_login_doctor {
 		httpPost = new HttpPost("http://localhost:6880/login");//直接登陆
 		//httpPost = new HttpPost("http://202.99.114.63:18029/login");
 		httpPost = new HttpPost("http://202.99.114.63:18029/login");
+		httpPost = new HttpPost("http://211.94.218.245:9080/login");
+		
+		httpPost = new HttpPost("http://localhost:6880/login");
 		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
@@ -40,7 +43,10 @@ public class Post_login_doctor {
 		
 		
 		parameters = "{\"username\":\"12345678924\",\"password\":\"MjljZmQwOTI1MzdhNzI1MTRjMmE2ZGNiMTkxMjlhMDQyZTU0MmI0OGFmMTU4MWNmNDNmMzhmNTI2Y2VhYmMwNA==\",\"usertype\":\"10\"}";
-			
+		
+		
+		parameters = "{\"username\":\"12345678924\",\"password\":\"MjljZmQwOTI1MzdhNzI1MTRjMmE2ZGNiMTkxMjlhMDQyZTU0MmI0OGFmMTU4MWNmNDNmMzhmNTI2Y2VhYmMwNA==\",\"usertype\":\"10\"}";
+		
 		//parameters = "{\"username\":\"admin1\",\"password\":\"$2a$10$3DYbbsL94OFlV6McoKS8V./E7oT5p9bTeMymmWPeUB3wo7wX0kssC\"}";
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		

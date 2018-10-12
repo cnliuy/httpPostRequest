@@ -22,7 +22,11 @@ public class Post_getSmsCode {
 	public static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
-		HttpPost httpPost = new HttpPost("http://localhost:6080/users/gogetsmscode");
+		HttpPost httpPost = new HttpPost("http://localhost:6880/users/gogetsmscode");
+		
+		
+		httpPost = new HttpPost("http://211.94.218.245:9080/users/gogetsmscode");
+		
 		httpPost.addHeader("Content-Type","application/json; charset=utf-8");
 		httpPost.setHeader("Accept", "application/json");  
 		//String Token =  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTUwMzM5NjYzNjIxMywiZXhwIjoxNTA0MDAxNDM2fQ.cO4NK45XLsS7b4EspYa_v2p00Ty87eDU6m0OiEuoUay_EORZBa1jCFskAnnlTCRHvu--hJHznP3WgUYpENC39Q";
@@ -31,6 +35,8 @@ public class Post_getSmsCode {
 		String parameters = "{\"username\":\"admin\",\"password\":\"admin\"}";
 		
 		parameters = "{\"username\":\"120101198705063021_18620007122\",\"phonenum\":\"18620007122\"}";
+		parameters = "{\"username\":\"123456123456123456_15620011620\",\"phonenum\":\"15620011620\"}";
+		
 		
 		//parameters = "{\"username\":\"admin1\",\"password\":\"$2a$10$3DYbbsL94OFlV6McoKS8V./E7oT5p9bTeMymmWPeUB3wo7wX0kssC\"}";
 		
