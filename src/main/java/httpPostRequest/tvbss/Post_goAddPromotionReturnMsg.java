@@ -17,65 +17,46 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 /**
- * 新建活动
+ * 新建活动的返回信息  自定义
+ * 
+ * 上传信息不做加密
  * 
  * */
-public class Post_goAddPromotionByArea {
+public class Post_goAddPromotionReturnMsg {
 	
 
 	public static void main(String[] args) throws Exception {
 		
-		String  url = "http://localhost:6280/goAddPromotionByArea";
-		String parameters = "{\"promotioni\":\"adminadminadminadminadmin\"}";
-		parameters = "{\"promotioni\":\"3SJbNr38GewUpnmrkon92g==\"}";
+		String  url = "http://localhost:6280/goAddPromotionReturnMsg";
+		String parameters = "{\"promotioni\":\"adminadminadminadminadmin\"}";		 
 		
 		/**
-		 *  	
-	int val; //权重  越大越后 起始值 100
-	String areacode; //对应owernarea
-	String numbertype;	
-	int startday;
-	int endday;	
-	int startyear;
-	int endyear;	
-	int startmonth;
-	int endmonth;		
+		 * resultsrc 的 现在入参
+		 * 	 
+		 * 4A6000  恭喜,成功参加了活动
+		 * 4A6002  您已参加过该活动
+		 * 4A6004  用户信息上传失败，不能参加活动
+		 * 4A6005  活动已经失效
+		 * 4A6007 参数错误
+		 * 
+		 *  	promotionid; 必传
+				areacode; 必传
+				resultsrc; 必传   对应活动的返回值  
+				private String msg1;
+				private String msg2;
+				private String msg3;
+				private String msg4;
+				private String msg5;
+				private String msg6;
+				private String msg7; 
+		 * 
+		 * */		
+		
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\",\"areacode\":\"022\","
+				+ "\"resultsrc\":\"4A6002\",\"msg1\":\"已参加活动的信息1\",\"msg2\":\"已参加活动的信息2222\",\"msg3\":\"信息3\"}"  ;
+	 	 
+		 
 	 
-	Date startdate; 
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
-	private Date enddate; 
-	private String promotionid;//活动编码 区号-起始时间-活动简称 022-20181022142312-jdcx
-	private String promotionname; //活动名称
-	private String promotiondesc; //活动描述1 
-	private String promotiondesc2;//活动描述2 
-	private String promotiondesc3;//活动描述3 
-	private String promotiondesc4;//活动描述4 
-	private String promotiondesc5;//活动描述5 
-		 * 
-		 * */
-		
-	
-		
-		parameters = "{\"val\":\"100\",\"areacode\":\"022\",\"numbertype\":\"0\","
-				+ "\"startday\":10,\"endday\":30,\"startyear\":2018,\"endyear\":2018,"
-				+ "\"startmonth\":10,\"endmonth\":10,"
-				+ "\"startdate\":\"2018-10-10 12:11:12\",\"enddate\":\"2018-10-20 12:11:12\","
-				+ "\"promotionid\":\"022-20181022142312-jdcx\",\"promotionname\":\"活动名称1\"}";
-	 	String encrypted = AESUtil.encrypt(parameters);
-		
-		parameters = "{\"promotioni\":\""+encrypted+"\"}";
-		
-		/**
-		 * 活动id promotionid
-		 * 
-		 * 充值号码,充值地区,号码类别, numstr,areacode,numberType,
-		 * 
-		 * 属主号码,属主地区,属主类型 ownernumber,ownerarea,ownertype,
-		 * 
-		 * 时间精确到秒(20181022142312), 金额(分), 手机号（密文传输，加密方式自定） date,fee,phonenum
-		 * */
-		
-		
 		
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();	
@@ -106,11 +87,7 @@ public class Post_goAddPromotionByArea {
 		} finally {
 		    response2.close();
 		}
-
-		/**
-		 * 
-		 * 
-		 * */
+ 
 	}
 	
 
