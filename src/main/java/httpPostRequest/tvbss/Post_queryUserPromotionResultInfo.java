@@ -16,44 +16,40 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 
-public class Post_uploadUserInfoToJoinPromotion {
+public class Post_queryUserPromotionResultInfo {
 	
 	/**
-	 * 用户参加某个地区的某个活动
+	 * 查询 用户参加某个地区的某个活动的
+	 * 结果信息
 	 * 
 	 * 
 	 * */
 	public static void main(String[] args) throws Exception {
 		
-		String  url = "http://localhost:6280/uploadUserInfoToJoinPromotion";
+		String  url = "http://localhost:6280/queryUserPromotionResultInfo";
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
-		parameters = "{\"useri\":\"3SJbNr38GewUpnmrkon92g==\"}";
-		
-		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\",\"numstr\":\"15522214511\","
-				+ "\"areacode\":\"022\",\"numberType\":\"1\","
-				+ "\"ownernumber\":\"15522214511\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
-				+ "\"fee\":\"100\",\"phonenum\":\"15522214512\"}";
-		
+		parameters = "{\"upromotionresultinfo\":\"3SJbNr38GewUpnmrkon92g==\"}";
+		/**
+		 * promotionid
+		 * ownernumber
+		 * ownerarea
+		 * phonenum
+		 * */		
 		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\","
-				+ "\"numberType\":\"1\","
 				+ "\"ownernumber\":\"022-22214511\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
-				+ "\"fee\":\"100\",\"phonenum\":\"15522214512\"}";
+				+ "\"phonenum\":\"15522214512\"}";
 	 	String encrypted = AESUtil.encrypt(parameters);
 		
-		parameters = "{\"useri\":\""+encrypted+"\"}";
+		parameters = "{\"upromotionresultinfo\":\""+encrypted+"\"}";
 		
 		/**
 		 * 活动id promotionid
 		 * 
-		 * 充值号码,充值地区,号码类别, numstr,areacode,numberType,
+		 * 属主号码,属主地区  ownernumber,ownerarea 
 		 * 
-		 * 属主号码,属主地区,属主类型 ownernumber,ownerarea,ownertype,
+		 * 手机号(密文传输，加密方式自定) ,phonenum
 		 * 
-		 * 时间精确到秒(20181022142312), 金额(分), 手机号（密文传输，加密方式自定） date,fee,phonenum
-		 * */
-		
-		
-		
+		 * */		
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();	
 		HttpPost httpPost = new HttpPost();		
@@ -82,12 +78,7 @@ public class Post_uploadUserInfoToJoinPromotion {
 
 		} finally {
 		    response2.close();
-		}
-
-		/**
-		 * 
-		 * 
-		 * */
+		} 
 	}
 	
 
