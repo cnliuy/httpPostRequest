@@ -2,6 +2,7 @@ package httpPostRequest.tvbss;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -24,7 +25,7 @@ public class Post_uploadUserInfoToJoinPromotion {
 	 * 
 	 * */
 	public static void main(String[] args) throws Exception {
-		
+		System.out.println(new Date());
 		String  url = "http://localhost:6280/uploadUserInfoToJoinPromotion";
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
 		parameters = "{\"useri\":\"3SJbNr38GewUpnmrkon92g==\"}";
@@ -36,12 +37,15 @@ public class Post_uploadUserInfoToJoinPromotion {
 		
 		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\","
 				+ "\"numberType\":\"1\","
-				+ "\"ownernumber\":\"022-22214511\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"ownernumber\":\"022-22214515\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
 				+ "\"fee\":\"100\",\"phonenum\":\"15522214512\"}";
 	 	String encrypted = AESUtil.encrypt(parameters);
-		
+		System.out.println(parameters);
+	 	System.out.println(encrypted);
+	 	
+	 	
 		parameters = "{\"useri\":\""+encrypted+"\"}";
-		
+		System.out.println(parameters);
 		/**
 		 * 活动id promotionid
 		 * 
@@ -83,6 +87,7 @@ public class Post_uploadUserInfoToJoinPromotion {
 		} finally {
 		    response2.close();
 		}
+		System.out.println(new Date());
 
 		/**
 		 * 

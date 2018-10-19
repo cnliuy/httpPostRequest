@@ -2,6 +2,7 @@ package httpPostRequest.tvbss;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -25,7 +26,7 @@ public class Post_queryUserPromotionResultInfo {
 	 * 
 	 * */
 	public static void main(String[] args) throws Exception {
-		
+		System.out.println(new Date());
 		String  url = "http://localhost:6280/queryUserPromotionResultInfo";
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
 		parameters = "{\"upromotionresultinfo\":\"3SJbNr38GewUpnmrkon92g==\"}";
@@ -34,12 +35,15 @@ public class Post_queryUserPromotionResultInfo {
 		 * ownernumber
 		 * ownerarea
 		 * phonenum
+		 * 
+		 * 0 等待     15未中   18中奖
 		 * */		
 		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\","
 				+ "\"ownernumber\":\"022-22214511\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
 				+ "\"phonenum\":\"15522214512\"}";
+		System.out.println(parameters);
 	 	String encrypted = AESUtil.encrypt(parameters);
-		
+		System.out.println(encrypted);
 		parameters = "{\"upromotionresultinfo\":\""+encrypted+"\"}";
 		
 		/**
@@ -79,6 +83,8 @@ public class Post_queryUserPromotionResultInfo {
 		} finally {
 		    response2.close();
 		} 
+		
+		System.out.println(new Date());
 	}
 	
 

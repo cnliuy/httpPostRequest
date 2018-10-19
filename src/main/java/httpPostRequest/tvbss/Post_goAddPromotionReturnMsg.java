@@ -50,10 +50,12 @@ public class Post_goAddPromotionReturnMsg {
 				private String msg6;
 				private String msg7; 
 		 * 
+		 * 
+		 * 4A6030 
 		 * */		
 		
 		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\",\"areacode\":\"022\","
-				+ "\"resultsrc\":\"4A6002\",\"msg1\":\"已参加活动的信息1\",\"msg2\":\"已参加活动的信息2222\",\"msg3\":\"信息3\"}"  ;
+				+ "\"resultsrc\":\"4A6030\",\"msg1\":\"恭喜中奖\",\"msg2\":\"恭喜中奖 信息2\",\"msg3\":\"恭喜中奖 信息3\"}"  ;
 	 	 
 		 
 	 
