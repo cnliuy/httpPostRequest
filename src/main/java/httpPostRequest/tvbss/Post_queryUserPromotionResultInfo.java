@@ -38,9 +38,13 @@ public class Post_queryUserPromotionResultInfo {
 		 * 
 		 * 0 等待     15未中   18中奖
 		 * */		
-		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\","
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
 				+ "\"ownernumber\":\"022-22214511\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
-				+ "\"phonenum\":\"15522214512\"}";
+				+ "\"phonenum\":\"15522214511\"}";
+		
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
+				+ "\"ownernumber\":\"022-22214516\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"phonenum\":\"15522214511\"}";
 		System.out.println(parameters);
 	 	String encrypted = AESUtil.encrypt(parameters);
 		System.out.println(encrypted);

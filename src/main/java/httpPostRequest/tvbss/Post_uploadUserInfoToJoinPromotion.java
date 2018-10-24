@@ -35,10 +35,21 @@ public class Post_uploadUserInfoToJoinPromotion {
 				+ "\"ownernumber\":\"15522214511\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
 				+ "\"fee\":\"100\",\"phonenum\":\"15522214512\"}";
 		
-		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\","
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
 				+ "\"numberType\":\"1\","
 				+ "\"ownernumber\":\"022-22214515\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
 				+ "\"fee\":\"100\",\"phonenum\":\"15522214512\"}";
+		
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
+				+ "\"numberType\":\"1\","
+				+ "\"ownernumber\":\"022-22214516\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"fee\":\"100\",\"phonenum\":\"15522214511\"}";
+		
+		
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
+				+ "\"numberType\":\"1\","
+				+ "\"ownernumber\":\"022-22214517\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"fee\":\"100\",\"phonenum\":\"15522214510\"}";
 	 	String encrypted = AESUtil.encrypt(parameters);
 		System.out.println(parameters);
 	 	System.out.println(encrypted);

@@ -54,13 +54,25 @@ public class Post_goAddPromotionByArea {
 		 * 
 		 * */
 		
-	
+		//usercount 活动人数
 		
-		parameters = "{\"val\":\"100\",\"areacode\":\"022\",\"numbertype\":\"0\","
+		parameters = "{\"val\":\"100\",\"areacode\":\"022\",\"numbertype\":\"0\", \"usercount\":0,"
 				+ "\"startday\":10,\"endday\":30,\"startyear\":2018,\"endyear\":2018,"
 				+ "\"startmonth\":10,\"endmonth\":10,"
 				+ "\"startdate\":\"2018-10-10 12:11:12\",\"enddate\":\"2018-10-20 12:11:12\","
-				+ "\"promotionid\":\"022-20181022142312-jdcx\",\"promotionname\":\"活动名称1\"}";
+				+ "\"promotionid\":\"022-20181022142312-jdcx\",\"promotionname\":\"活动名称0\"}";
+		
+		parameters = "{\"val\":\"101\",\"areacode\":\"022\",\"numbertype\":\"0\", \"usercount\":2,"
+				+ "\"startday\":10,\"endday\":30,\"startyear\":2018,\"endyear\":2018,"
+				+ "\"startmonth\":10,\"endmonth\":10,"
+				+ "\"startdate\":\"2018-10-10 12:11:12\",\"enddate\":\"2018-10-20 12:11:12\","
+				+ "\"promotionid\":\"022-20181022142312-jdcx1\",\"promotionname\":\"活动名称1\"}";
+		
+		parameters = "{\"val\":\"101\",\"areacode\":\"022\",\"numbertype\":\"0\", \"usercount\":2,"
+				+ "\"startday\":10,\"endday\":30,\"startyear\":2018,\"endyear\":2018,"
+				+ "\"startmonth\":10,\"endmonth\":10,"
+				+ "\"startdate\":\"2018-10-10 12:11:12\",\"enddate\":\"2018-10-20 12:11:12\","
+				+ "\"promotionid\":\"022-20181022142312-jdcx2\",\"promotionname\":\"活动名称2\"}";
 	 	String encrypted = AESUtil.encrypt(parameters);
 		
 		parameters = "{\"promotioni\":\""+encrypted+"\"}";
