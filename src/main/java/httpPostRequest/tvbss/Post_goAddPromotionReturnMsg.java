@@ -39,6 +39,9 @@ public class Post_goAddPromotionReturnMsg {
 		 * 4A6005  活动已经失效
 		 * 4A6007 参数错误
 		 * 
+		 * 4A6008 抱歉，活动人数已满
+		 * 
+		 * 
 		 *  	promotionid; 必传
 				areacode; 必传
 				resultsrc; 必传   对应活动的返回值  
@@ -57,7 +60,11 @@ public class Post_goAddPromotionReturnMsg {
 		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\",\"areacode\":\"022\","
 				+ "\"resultsrc\":\"4A6030\",\"msg1\":\"恭喜中奖\",\"msg2\":\"恭喜中奖 信息2\",\"msg3\":\"恭喜中奖 信息3\"}"  ;
 	 	 
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\",\"areacode\":\"022\","
+				+ "\"resultsrc\":\"4A6008\",\"msg1\":\"抱歉，活动人数已满\",\"msg2\":\"抱歉，活动人数已满\",\"msg3\":\"抱歉，活动人数已满\"}"  ;
+	 	 
 		 
+	 
 	 
 		
 		
