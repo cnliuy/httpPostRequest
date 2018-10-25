@@ -25,7 +25,7 @@ public static void main(String[] args) throws ClientProtocolException, IOExcepti
 		
 		String url = "http://127.0.0.1:6880/getDocMess?id=1";
 		url = "http://localhost:6280/queryPromotionByArea?areacode=022";
-		//url = "http://60.29.181.148:6280/queryPromotionByArea?areacode=022";
+		url = "http://60.29.181.148:6280/queryPromotionByArea?areacode=022";
 
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		HttpGet httpget = new HttpGet(url);
