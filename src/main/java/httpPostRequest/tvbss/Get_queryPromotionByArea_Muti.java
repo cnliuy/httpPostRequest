@@ -13,6 +13,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+
 /**
  * 
  * 通过地区 查活动
@@ -21,11 +22,25 @@ import org.apache.http.util.EntityUtils;
  */
 public class Get_queryPromotionByArea_Muti {
 	
-public static void main(String[] args) throws ClientProtocolException, IOException {
+	
+	public static void main(String[] args) throws Exception {
+		
+		for(int i = 0 ; i< 1000000 ; i++) {
+			
+			Get_queryPromotionByArea_Muti p = new Get_queryPromotionByArea_Muti();
+			p.testUrl();
+			System.out.println("执行第"+i+"次");
+			System.out.println("-----------");
+			
+		}
+		
+		
+	}
+	public  void testUrl() throws ClientProtocolException, IOException {
 		
 		String url = "http://127.0.0.1:6880/getDocMess?id=1";
 		url = "http://localhost:6280/queryPromotionByArea?areacode=022";
-		//url = "http://60.29.181.148:6280/queryPromotionByArea?areacode=022";
+		url = "http://60.29.181.148:6280/queryPromotionByArea?areacode=022";
 
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		HttpGet httpget = new HttpGet(url);

@@ -17,14 +17,28 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 
-public class Post_uploadUserInfoToJoinPromotion {
+public class Post_uploadUserInfoToJoinPromotion_Muti {
+	
+	
+	public static void main(String[] args) throws Exception {
+		
+		for(int i = 0 ; i< 1000000 ; i++) {
+			
+			Post_uploadUserInfoToJoinPromotion_Muti p = new Post_uploadUserInfoToJoinPromotion_Muti();
+			p.uploadUserInfoToJoinPromotion();
+			System.out.println("执行第"+i+"次");
+			System.out.println("-----------");
+		}
+		
+		
+	}
 	
 	/**
 	 * 用户参加某个地区的某个活动
 	 * 
 	 * 
 	 * */
-	public static void main(String[] args) throws Exception {
+	public  void uploadUserInfoToJoinPromotion( ) throws Exception {
 		System.out.println(new Date());
 		String  url = "http://localhost:6280/uploadUserInfoToJoinPromotion";
 		

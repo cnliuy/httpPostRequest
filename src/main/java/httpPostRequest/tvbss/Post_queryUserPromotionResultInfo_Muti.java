@@ -17,66 +17,69 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 
-public class Post_uploadUserInfoToJoinPromotion {
+public class Post_queryUserPromotionResultInfo_Muti {
+	
+	public static void main(String[] args) throws Exception {
+		
+		for(int i = 0 ; i< 1000000 ; i++) {
+			
+			Post_queryUserPromotionResultInfo_Muti p = new Post_queryUserPromotionResultInfo_Muti();
+			p.Post_queryUserPromotionResultInfo_Muti();
+			System.out.println("执行第"+i+"次");
+			System.out.println("-----------");
+		}
+		
+		
+	}
 	
 	/**
-	 * 用户参加某个地区的某个活动
+	 * 查询 用户参加某个地区的某个活动的
+	 * 结果信息
 	 * 
 	 * 
 	 * */
-	public static void main(String[] args) throws Exception {
+	public  void Post_queryUserPromotionResultInfo_Muti() throws Exception {
 		System.out.println(new Date());
-		String  url = "http://localhost:6280/uploadUserInfoToJoinPromotion";
+		String  url = "http://localhost:6280/queryUserPromotionResultInfo";
+		url = "http://60.29.181.148:6280/queryUserPromotionResultInfo";
 		
-		url = "http://60.29.181.148:6280/uploadUserInfoToJoinPromotion";
-
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
-		parameters = "{\"useri\":\"3SJbNr38GewUpnmrkon92g==\"}";
-		
-		parameters = "{\"promotionid\":\"022-20181022142312-jdcx\",\"numstr\":\"15522214511\","
-				+ "\"areacode\":\"022\",\"numberType\":\"1\","
-				+ "\"ownernumber\":\"15522214511\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
-				+ "\"fee\":\"100\",\"phonenum\":\"15522214512\"}";
+		parameters = "{\"upromotionresultinfo\":\"3SJbNr38GewUpnmrkon92g==\"}";
+		/**
+		 * promotionid
+		 * ownernumber
+		 * ownerarea
+		 * phonenum
+		 * 
+		 * 0 等待     15未中   18中奖
+		 * */		
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
+				+ "\"ownernumber\":\"022-22214511\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"phonenum\":\"15522214511\"}";
 		
 		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
-				+ "\"numberType\":\"1\","
-				+ "\"ownernumber\":\"022-22214515\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
-				+ "\"fee\":\"100\",\"phonenum\":\"15522214512\"}";
-		
-		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
-				+ "\"numberType\":\"1\","
-				+ "\"ownernumber\":\"022-22214516\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
-				+ "\"fee\":\"100\",\"phonenum\":\"15522214511\"}";
-		
-		
-		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
-				+ "\"numberType\":\"1\","
 				+ "\"ownernumber\":\"022-22214517\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
-				+ "\"fee\":\"100\",\"phonenum\":\"15522214510\"}";
+				+ "\"phonenum\":\"15522214510\"}";
 		
-		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
-				+ "\"numberType\":\"1\","
-				+ "\"ownernumber\":\"15522214510\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
-				+ "\"fee\":\"100\",\"phonenum\":\"022-22214517\"}";
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx2\","
+				+ "\"ownernumber\":\"16601160001\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"phonenum\":\"02201999909\"}";
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx2\","
+				+ "\"ownernumber\":\"02201999909\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"phonenum\":\"16601160001\"}";
+		System.out.println(parameters);
 	 	String encrypted = AESUtil.encrypt(parameters);
-		System.out.println(parameters);
-	 	System.out.println(encrypted);
-	 	
-	 	
-		parameters = "{\"useri\":\""+encrypted+"\"}";
-		System.out.println(parameters);
+		System.out.println(encrypted);
+		parameters = "{\"upromotionresultinfo\":\""+encrypted+"\"}";
+		
 		/**
 		 * 活动id promotionid
 		 * 
-		 * 充值号码,充值地区,号码类别, numstr,areacode,numberType,
+		 * 属主号码,属主地区  ownernumber,ownerarea 
 		 * 
-		 * 属主号码,属主地区,属主类型 ownernumber,ownerarea,ownertype,
+		 * 手机号(密文传输，加密方式自定) ,phonenum
 		 * 
-		 * 时间精确到秒(20181022142312), 金额(分), 手机号（密文传输，加密方式自定） date,fee,phonenum
-		 * */
-		
-		
-		
+		 * */		
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();	
 		HttpPost httpPost = new HttpPost();		
@@ -105,13 +108,9 @@ public class Post_uploadUserInfoToJoinPromotion {
 
 		} finally {
 		    response2.close();
-		}
+		} 
+		
 		System.out.println(new Date());
-
-		/**
-		 * 
-		 * 
-		 * */
 	}
 	
 
