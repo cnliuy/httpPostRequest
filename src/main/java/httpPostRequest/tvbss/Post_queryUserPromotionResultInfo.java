@@ -28,6 +28,8 @@ public class Post_queryUserPromotionResultInfo {
 	public static void main(String[] args) throws Exception {
 		System.out.println(new Date());
 		String  url = "http://localhost:6280/queryUserPromotionResultInfo";
+		url = "http://60.29.181.148:6280/queryUserPromotionResultInfo";
+		
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
 		parameters = "{\"upromotionresultinfo\":\"3SJbNr38GewUpnmrkon92g==\"}";
 		/**
@@ -45,6 +47,13 @@ public class Post_queryUserPromotionResultInfo {
 		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
 				+ "\"ownernumber\":\"022-22214517\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
 				+ "\"phonenum\":\"15522214510\"}";
+		
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx2\","
+				+ "\"ownernumber\":\"16601160001\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"phonenum\":\"02201999909\"}";
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx2\","
+				+ "\"ownernumber\":\"02201999909\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"phonenum\":\"16601160001\"}";
 		System.out.println(parameters);
 	 	String encrypted = AESUtil.encrypt(parameters);
 		System.out.println(encrypted);

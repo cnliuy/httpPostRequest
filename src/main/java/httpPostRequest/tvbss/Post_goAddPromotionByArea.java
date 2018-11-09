@@ -26,6 +26,8 @@ public class Post_goAddPromotionByArea {
 	public static void main(String[] args) throws Exception {
 		
 		String  url = "http://localhost:6280/goAddPromotionByArea";
+		
+	
 		String parameters = "{\"promotioni\":\"adminadminadminadminadmin\"}";
 		parameters = "{\"promotioni\":\"3SJbNr38GewUpnmrkon92g==\"}";
 		

@@ -28,16 +28,23 @@ public class Post_goAddPromotionReturnMsg {
 	public static void main(String[] args) throws Exception {
 		
 		String  url = "http://localhost:6280/goAddPromotionReturnMsg";
+		
+		url ="http://60.29.181.148:6280/goAddPromotionReturnMsg";
+		
+		
 		String parameters = "{\"promotioni\":\"adminadminadminadminadmin\"}";		 
 		
 		/**
 		 * resultsrc 的 现在入参
+		 * 
+		 * 4A6100  活动描述
 		 * 	 
 		 * 4A6000  恭喜,成功参加了活动
 		 * 4A6002  您已参加过该活动
 		 * 4A6004  用户信息上传失败，不能参加活动
 		 * 4A6005  活动已经失效
 		 * 4A6007 参数错误
+		 * 
 		 * 
 		 * 4A6008 抱歉，活动人数已满
 		 * 
@@ -63,7 +70,9 @@ public class Post_goAddPromotionReturnMsg {
 		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\",\"areacode\":\"022\","
 				+ "\"resultsrc\":\"4A6008\",\"msg1\":\"抱歉，活动人数已满\",\"msg2\":\"抱歉，活动人数已满\",\"msg3\":\"抱歉，活动人数已满\"}"  ;
 	 	 
-		 
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx2\",\"areacode\":\"022\","
+				+ "\"resultsrc\":\"4A6100\",\"msg1\":\"活动描述1\",\"msg2\":\"活动描述2\",\"msg3\":\"活动描述3\"}"  ;
+	 	 
 	 
 	 
 		

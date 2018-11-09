@@ -50,6 +50,11 @@ public class Post_uploadUserInfoToJoinPromotion {
 				+ "\"numberType\":\"1\","
 				+ "\"ownernumber\":\"022-22214517\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
 				+ "\"fee\":\"100\",\"phonenum\":\"15522214510\"}";
+		
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
+				+ "\"numberType\":\"1\","
+				+ "\"ownernumber\":\"15522214510\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"fee\":\"100\",\"phonenum\":\"022-22214517\"}";
 	 	String encrypted = AESUtil.encrypt(parameters);
 		System.out.println(parameters);
 	 	System.out.println(encrypted);

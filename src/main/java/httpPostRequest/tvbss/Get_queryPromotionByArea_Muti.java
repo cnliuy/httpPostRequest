@@ -19,7 +19,7 @@ import org.apache.http.util.EntityUtils;
  * @author ly
  *
  */
-public class Get_queryPromotionByArea {
+public class Get_queryPromotionByArea_Muti {
 	
 public static void main(String[] args) throws ClientProtocolException, IOException {
 		
