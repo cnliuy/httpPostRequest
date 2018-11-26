@@ -22,7 +22,7 @@ public class Post_uploadUserInfoToJoinPromotion_Muti {
 	
 	public static void main(String[] args) throws Exception {
 		
-		for(int i = 0 ; i< 1000000 ; i++) {
+		for(int i = 0 ; i< 100 ; i++) {
 			
 			Post_uploadUserInfoToJoinPromotion_Muti p = new Post_uploadUserInfoToJoinPromotion_Muti();
 			p.uploadUserInfoToJoinPromotion();
@@ -42,7 +42,7 @@ public class Post_uploadUserInfoToJoinPromotion_Muti {
 		System.out.println(new Date());
 		String  url = "http://localhost:6280/uploadUserInfoToJoinPromotion";
 		
-		url = "http://60.29.181.148:6280/uploadUserInfoToJoinPromotion";
+		//url = "http://60.29.181.148:6280/uploadUserInfoToJoinPromotion";
 
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
 		parameters = "{\"useri\":\"3SJbNr38GewUpnmrkon92g==\"}";

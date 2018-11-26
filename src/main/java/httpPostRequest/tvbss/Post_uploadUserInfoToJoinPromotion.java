@@ -28,7 +28,9 @@ public class Post_uploadUserInfoToJoinPromotion {
 		System.out.println(new Date());
 		String  url = "http://localhost:6280/uploadUserInfoToJoinPromotion";
 		
-		url = "http://60.29.181.148:6280/uploadUserInfoToJoinPromotion";
+		//url = "http://60.29.181.148:6280/uploadUserInfoToJoinPromotion";
+		
+		//url = "http://202.99.114.136:10021/uploadUserInfoToJoinPromotion";
 
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
 		parameters = "{\"useri\":\"3SJbNr38GewUpnmrkon92g==\"}";
@@ -54,10 +56,14 @@ public class Post_uploadUserInfoToJoinPromotion {
 				+ "\"ownernumber\":\"022-22214517\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
 				+ "\"fee\":\"100\",\"phonenum\":\"15522214510\"}";
 		
-		parameters = "{\"promotionid\":\"022-20181022142312-jdcx1\","
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx2\","
 				+ "\"numberType\":\"1\","
-				+ "\"ownernumber\":\"15522214510\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
-				+ "\"fee\":\"100\",\"phonenum\":\"022-22214517\"}";
+				+ "\"ownernumber\":\"022-22214517\",\"ownerarea\":\"022\","    // ownerarea 以此地区号为准
+				+ "\"fee\":\"100\",\"phonenum\":\"15522214510\"}";
+		
+
+		
+		
 	 	String encrypted = AESUtil.encrypt(parameters);
 		System.out.println(parameters);
 	 	System.out.println(encrypted);
