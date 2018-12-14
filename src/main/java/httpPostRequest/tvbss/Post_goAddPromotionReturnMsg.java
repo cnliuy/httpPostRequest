@@ -29,7 +29,9 @@ public class Post_goAddPromotionReturnMsg {
 		
 		String  url = "http://localhost:6280/goAddPromotionReturnMsg";
 		
-		url ="http://60.29.181.148:6280/goAddPromotionReturnMsg";
+		url = "http://202.99.114.63:18023/goAddPromotionReturnMsg";//zs
+		
+		//url ="http://60.29.181.148:6280/goAddPromotionReturnMsg";
 		
 		
 		String parameters = "{\"promotioni\":\"adminadminadminadminadmin\"}";		 
@@ -73,8 +75,20 @@ public class Post_goAddPromotionReturnMsg {
 		parameters = "{\"promotionid\":\"022-20181022142312-jdcx2\",\"areacode\":\"022\","
 				+ "\"resultsrc\":\"4A6100\",\"msg1\":\"活动描述1\",\"msg2\":\"活动描述2\",\"msg3\":\"活动描述3\"}"  ;
 	 	 
-	 
-	 
+		parameters = "{\"promotionid\":\"022-20181022142312-jdcx2\",\"areacode\":\"022\","
+				+ "\"resultsrc\":\"4A6100\",\"msg1\":\"活动描述1\",\"msg2\":\"活动描述2\",\"msg3\":\"活动描述3\"}"  ;
+		
+		
+		/**
+		 *   需要配置  4A6100 的话术
+		 * 
+		 * */
+		parameters = "{\"promotionid\":\"0101-20181129010101-jdzs1\",\"areacode\":\"010\","
+				+ "\"resultsrc\":\"4A6100\",\"msg1\":\"北京活动\",\"msg2\":\"京东卡券\",\"msg3\":\"测试活动\"}"  ;
+		
+		parameters = "{\"promotionid\":\"0101-20181129010101-jdzs1\",\"areacode\":\"010\","
+				+ "\"resultsrc\":\"4A6000\",\"msg1\":\"京东卡3个工作日内短信发送，请注意查收。\"}"  ;
+		
 		
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();	

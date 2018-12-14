@@ -28,7 +28,7 @@ public class Post_queryUserPromotionResultInfo {
 	public static void main(String[] args) throws Exception {
 		System.out.println(new Date());
 		String  url = "http://localhost:6280/queryUserPromotionResultInfo";
-		//url = "http://60.29.181.148:6280/queryUserPromotionResultInfo";
+		url = "http://60.29.181.148:6280/queryUserPromotionResultInfo";
 		
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
 		parameters = "{\"upromotionresultinfo\":\"3SJbNr38GewUpnmrkon92g==\"}";

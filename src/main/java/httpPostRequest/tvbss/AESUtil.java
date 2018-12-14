@@ -23,6 +23,19 @@ public enum AESUtil {
 		try {
 			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
 			cipher.init(Cipher.ENCRYPT_MODE, makeKey(), makeIv());
+			
+			
+			byte[] arr= makeKey().getEncoded();
+			System.out.println(
+					 new String(arr,"UTF-8")); 
+			for(byte e : arr) {
+				System.out.print(e + " ");
+			}
+			//System.out.println();
+			
+			//System.out.println(UtilHelper.byte2Base64StringFun(arr));
+			
+	
 			return Base64.encodeBytes(cipher.doFinal(src.getBytes()));
 		} catch (Exception e) {
 			throw new RuntimeException(e);

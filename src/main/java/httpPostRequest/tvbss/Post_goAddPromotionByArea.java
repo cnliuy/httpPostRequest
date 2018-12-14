@@ -27,9 +27,11 @@ public class Post_goAddPromotionByArea {
 		
 		String  url = "http://localhost:6280/goAddPromotionByArea";
 		
-	
+		   //url = "http://202.99.114.63:18023/goAddPromotionByArea"; //zs
+		
+		
 		String parameters = "{\"promotioni\":\"adminadminadminadminadmin\"}";
-		parameters = "{\"promotioni\":\"3SJbNr38GewUpnmrkon92g==\"}";
+		parameters = "{\"promotioni\":\"3SJbNr38GewUpnmrkon92g==\"}";  //后面会被覆盖
 		
 		/**
 		 *  	
@@ -75,6 +77,23 @@ public class Post_goAddPromotionByArea {
 				+ "\"startmonth\":10,\"endmonth\":10,"
 				+ "\"startdate\":\"2018-10-10 12:11:12\",\"enddate\":\"2018-10-20 12:11:12\","
 				+ "\"promotionid\":\"022-20181022142312-jdcx2\",\"promotionname\":\"活动名称2\"}";
+		
+		/**
+		 * 需把日期和时间调对
+		 *    字符中的也要对应好
+		 * 
+		 * 注重配置 promotionid 不能重复  和 日期 
+		 * 
+		 * */
+		parameters = "{\"val\":\"101\",\"areacode\":\"010\",\"numbertype\":\"0\", \"usercount\":1,"  //可用的用户数
+				+ "\"startday\":28,\"endday\":1,"
+				+ "\"startyear\":2018,\"endyear\":2018,"
+				+ "\"startmonth\":11,\"endmonth\":12,"
+				+ "\"startdate\":\"2018-11-28 12:11:12\","
+				+ "\"enddate\":\"2018-12-01 23:59:59\","
+				+ "\"promotionid\":\"0101-20181129010101-jdzs1\",\"promotionname\":\"北京活动1\"}";
+		
+		
 	 	String encrypted = AESUtil.encrypt(parameters);
 		
 		parameters = "{\"promotioni\":\""+encrypted+"\"}";
