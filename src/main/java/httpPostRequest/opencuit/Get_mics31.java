@@ -29,8 +29,8 @@ public static void main(String[] args) throws ClientProtocolException, IOExcepti
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");		
 		String timestr = sdf.format(new Date());
 		
-		int numberlen  = 4;	//从前向后
-		int timelen =  4;//从后向前
+		int numberlen  = 4;	//从前向后  serialnum
+		int timelen =  4;//从后向前  timestr
 		
 		
 		String url = "http://127.0.0.1:6280/mics311?areacode="+areacode+"&serialnum="+serialnum+"&timestr="+timestr+"&clicode="+clicode;
