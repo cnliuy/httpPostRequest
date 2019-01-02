@@ -149,30 +149,50 @@ public class Post_login_vas_muti {
 	
 	
 	/**
+	 * 	 url
+	 *   carrierId  
+	 *   accessChannel  
+	 *   area  
+	 *   ip   
+	 *   mac  
+	 *   userId  
+	 *   versionCode  
+	 *   model  
+	 *   osVersion
 	 * 
 	 * 静态方法 可被外部调用 
 	 *  直接返回 token
 	 * 可做后续的逻辑处理
 	 * 
+	 * @return
+	 * 	serviceUrl   
+	 *  sessionId
+	 *  userToken
+	 * 		
+	 * 
 	 * */
-	public static String vasloginReturnToken() throws Exception {
-		String returncode = "";
+	public static String[] vasloginReturnToken(String url , String carrierId , String accessChannel ,String area ,
+			String ip , String mac , String userId ,String versionCode ,String model ,String osVersion ) throws Exception {
 		
-		String carrierId = "240";
-		String accessChannel = "9";
-		String area = "12";		
-		String ip = "192.168.18.186";
-		String mac = "F44C70FF2323";
-		String userId = "F44C70FF2323";
-		String versionCode = "3180";
-		String model = "E900V21D";
-		String osVersion = "4.4.2";
+		String[] returncode  = new String[]{"","",""};
+		
+		String accessItem = "1"; //0: 系统自启动 		1：用户登录		2：第三方服务
+
+		
+//		String carrierId = "240";
+//		String accessChannel = "9";
+//		String area = "12";		
+//		String ip = "192.168.18.186";
+//		String mac = "F44C70FF2323";
+//		String userId = "F44C70FF2323";
+//		String versionCode = "3180";
+//		String model = "E900V21D";
+//		String osVersion = "4.4.2";
 		
 		
-		String url;	
-		url = "http://211.94.218.245:9080/login";
-		url = "http://202.99.114.63:35003/PORTAL/dsm/loginByUserId";   //zs
-		
+		//String url;	
+		//url = "http://211.94.218.245:9080/login";
+		//url = "http://202.99.114.63:35003/PORTAL/dsm/loginByUserId";   //zs		
 		String userToken = "";
 		String serviceUrl = "";
 		String sessionId = "";
@@ -191,10 +211,43 @@ public class Post_login_vas_muti {
 		parameters = "{\"accessChannel\":\"9\",\"accessItem\":\"1\",\"area\":\"12\","
 				+ "\"carrierId\":\"240\",\"ip\":\"192.168.18.186\",\"mac\":\"F44C70FF2323\","
 				+ "\"model\":\"E900V21D\",\"osVersion\":\"4.4.2\",\"userId\":\"F44C70FF2323\",\"versionCode\":\"3180\"}";
-		parameters = "{\"accessChannel\":\""+accessChannel+"\",\"accessItem\":\"1\",\"area\":\""+area+"\","
-				+ "\"carrierId\":\""+carrierId+"\",\"ip\":\""+ip+"\",\"mac\":\""+mac+"\","
-				+ "\"model\":\""+model+"\",\"osVersion\":\""+osVersion+"\",\"userId\":\""+userId
-				+"\",\"versionCode\":\""+versionCode+"\"}";
+		
+		parameters = "{";
+		if( accessChannel == null || "".equals(accessChannel)) {
+		}else {	
+			parameters += "\"accessChannel\":\""+accessChannel;
+		}
+		
+		
+		
+		if( area == null || "".equals(area)) {
+			
+			parameters = "{"
+					+ "\"accessChannel\":\""+accessChannel
+					+"\",\"accessItem\":\""+accessItem+"\","
+					//+ "\"area\":\""+area+"\","
+					+ "\"carrierId\":\""+carrierId+"\","
+					+ "\"ip\":\""+ip+"\","
+					+ "\"mac\":\""+mac+"\","
+					+ "\"model\":\""+model+"\","
+					+ "\"osVersion\":\""+osVersion+"\","
+					+ "\"userId\":\""+userId
+					+"\",\"versionCode\":\""+versionCode+"\"}";
+		}else {
+			parameters = "{\"accessChannel\":\""+accessChannel
+					+"\",\"accessItem\":\"1\","
+					//+ "\"area\":\""+area+"\","
+					+ "\"carrierId\":\""+carrierId+"\","
+					+ "\"ip\":\""+ip+"\","
+					+ "\"mac\":\""+mac+"\","
+					+ "\"model\":\""+model+"\","
+					+ "\"osVersion\":\""+osVersion+"\","
+					+ "\"userId\":\""+userId
+					+"\",\"versionCode\":\""+versionCode+"\"}";
+			
+			
+		}
+		System.out.println("登陆 json :"+parameters);
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		HttpPost httpPost = new HttpPost(url);
 		httpPost.addHeader("Content-Type", "application/json; charset=utf-8");
@@ -211,12 +264,18 @@ public class Post_login_vas_muti {
 				++ii;
 			}
 			String response2txt = EntityUtils.toString(entity2);
-			
+			System.out.println("response2txt:"+response2txt);
 			JSONObject jsonObject = JSONObject.parseObject(response2txt);
 			userToken = jsonObject.getString("userToken");
 			serviceUrl = jsonObject.getString("serviceUrl");
-			sessionId = jsonObject.getString("sessionId");			 
-			returncode = userToken+" "+serviceUrl;			
+			sessionId = jsonObject.getString("sessionId");	
+			
+			returncode[0]=  serviceUrl;   
+			returncode[1]=  sessionId;
+			returncode[2]=  userToken;
+			
+			
+			//returncode = userToken+" "+serviceUrl;			
 			//System.out.println(userToken+" "+serviceUrl);
 
 		} finally {

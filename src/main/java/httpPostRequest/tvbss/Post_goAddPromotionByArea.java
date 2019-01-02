@@ -27,7 +27,7 @@ public class Post_goAddPromotionByArea {
 		
 		String  url = "http://localhost:6280/goAddPromotionByArea";
 		
-		   //url = "http://202.99.114.63:18023/goAddPromotionByArea"; //zs
+		   url = "http://202.99.114.63:18023/goAddPromotionByArea"; //zs
 		
 		
 		String parameters = "{\"promotioni\":\"adminadminadminadminadmin\"}";

@@ -27,6 +27,11 @@ public static void main(String[] args) throws ClientProtocolException, IOExcepti
 		url = "http://localhost:6280/queryPromotionByArea?areacode=022";
 		//url = "http://60.29.181.148:6280/queryPromotionByArea?areacode=022";   //cs
         url = "http://202.99.114.63:18023/queryPromotionByArea?areacode=010";  //zs
+        url = "http://202.99.114.136:10009/queryPromotionByArea?areacode=010";  //zs
+        
+        
+
+
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		HttpGet httpget = new HttpGet(url);
 
