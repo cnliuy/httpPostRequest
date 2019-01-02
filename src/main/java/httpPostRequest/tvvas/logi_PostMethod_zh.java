@@ -5,9 +5,15 @@ public class logi_PostMethod_zh {
 	 * 组合逻辑调用
 	 * @throws Exception 
 	 * 
+	 * 1. 先登录
+	 * 2. 调用其他逻辑
+	 * 
 	 * */
 	public static void main(String[] args) throws Exception {
-		
+		/**
+		 * 1 登陆  获取sessionid
+		 * 
+		 * */
 		String carrierId = "201";
 		String accessChannel = "10"; //第三方 cp
 		//String area = "12";		
@@ -38,7 +44,12 @@ public class logi_PostMethod_zh {
 		
 		System.out.println(serviceUrl + "; sessionId="+sessionId+"; userToken="+ userToken);
 		
-		
+		/**
+		 * 2 其他逻辑
+		 * 	
+		 *  QueryUserJoinedCampaigns  1.93.	查询新营销活动接口
+		 * 
+		 * */
 		String status = "1";  //0	未生效     ; 1	已生效
 
 		int page = 1;
