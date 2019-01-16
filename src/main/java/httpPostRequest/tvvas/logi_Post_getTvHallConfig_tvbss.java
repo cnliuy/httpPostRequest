@@ -15,11 +15,11 @@ public class logi_Post_getTvHallConfig_tvbss {
 		 * 
 		 * */
 		String carrierId = "022";
-		carrierId = "204";  //河南
+		
 		carrierId = "211";  //黑龙江
 		//carrierId = "201"; //天津
 		carrierId = "205";  //北京
-		
+		carrierId = "204";  //河南
 		 
 		
 		String userId = "395294249080236389_204";//rewrewrere&carrierid=20
@@ -29,9 +29,10 @@ public class logi_Post_getTvHallConfig_tvbss {
 		//userId = "371280436582860154_204";
 		userId = "371991018832735241";
 		userId = "371874421965956216";
-		userId = "2309047395";
+		//userId = "2309047395";
+		userId = "395294249080236389";
 		
-		userId = "01-01010252606-01";
+		//userId = "01-01010252606-01";
 		
 		//String accessChannel = "10"; //第三方 cp
 		String accessChannel = "14"; //电视营业厅
