@@ -17,13 +17,13 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 
-public class Post_queryPostInfo_Muti {
+public class Post_queryPostInfo2_Muti {
 	
 	public static void main(String[] args) throws Exception {
 		
-		for(int i = 0 ; i< 10000 ; i++) {
+		for(int i = 0 ; i< 1 ; i++) {
 			
-			Post_queryPostInfo_Muti p = new Post_queryPostInfo_Muti();
+			Post_queryPostInfo2_Muti p = new Post_queryPostInfo2_Muti();
 			p.Post_testhellopost_Muti();
 			System.out.println("执行第"+i+"次");
 			System.out.println("-----------");
@@ -46,8 +46,8 @@ public class Post_queryPostInfo_Muti {
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
 		parameters = "{\"upromotionresultinfo\":\"3SJbNr38GewUpnmrkon92\"}";
 		
-		parameters = "{\"enstr\":\"11111111111111111111111111111111111\"}";
-		
+		parameters = "{\"enstr2\":\"11111111111111111111111111111111111\"}";
+		parameters = "{ \"cliid\": \"ott1201\",\"enstr\": \"NkEzRDFFQkI3MTcxRDAxMkU0MjQwNzlEQjJCRDI4RTRFRkQxQzU5MTA5ODlDRDU1REI5OTRBMDM0OUE1ODE2Nw==\" }";
 		System.out.println(parameters);
 	 	 
 		

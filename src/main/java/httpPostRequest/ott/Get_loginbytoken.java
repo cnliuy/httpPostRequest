@@ -21,12 +21,12 @@ public class Get_loginbytoken {
 	public static void main(String[] args) throws ClientProtocolException, IOException {
 		String tokens ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50VGltZU1pbGxpcyI6IjE1NDcwMjQ4ODAyNDAiLCJleHAiOjE1NDcwMjUxODAsImFjY291bnQiOiJhY2NvdW50MSJ9.HCTxgvIO342l6RGW5sU6y3wMrgbbpTxR2oaXRsSFYfk";
 		tokens = 
-"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50VGltZU1pbGxpcyI6IjE1NDcxNzI2NjUwODQiLCJleHAiOjE1NDcxNzU2NjUsImFjY291bnQiOiJhY2NvdW50MSJ9.9DE6eVqjCKkLpUba5l17WOfghAH3gRlFIx5wfN5VUq4";
+"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50VGltZU1pbGxpcyI6IjE1NDc3MTg3MDIxNDYiLCJleHAiOjE1NDc3MjE3MDIsImFjY291bnQiOiJhY2NvdW50MSJ9.ZSdSbHHxP1PAQ30jtj7xG2vEvvFqxkdIm9naYdHhwi0";
 		String url = "http://127.0.0.1:8080/";  
 		url = "http://127.0.0.1:8080/api/queryAccount?numstr=031800177748&areacode=0318&phoneType=03";
 		url = "http://127.0.0.1:8080/api/testGetUsername?uu=12456";
 		
-		for(int i =0 ;i<1 ;i++) {
+		for(int i =0 ;i<1000 ;i++) {
 		 Get_loginbytoken.loginbytoken(url,tokens);
 		 System.out.println("----------第 "+i+" 次");
 		}
