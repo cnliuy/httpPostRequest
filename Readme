@@ -1,23 +1,24 @@
-ÓÃÀ´²âÊÔ Post ÇëÇó
+ç”¨æ¥æµ‹è¯• Post è¯·æ±‚
 
- ¸Ã testCUTVAPI ·ÖÖ§£¬³ÌĞò¸üÈ«
+ è¯¥ testCUTVAPI åˆ†æ”¯ï¼Œç¨‹åºæ›´å…¨
 
-ĞÂ²Ö¿â  https://culiuy@bitbucket.org/culiuy/httppostrequest.git
+æ–°ä»“åº“  https://culiuy@bitbucket.org/culiuy/httppostrequest.git
 
 --------------------------------
 
 Test Post Request ( GBK encode )
 
 --------------------------------
-JWTµÄÏà¹Ø²âÊÔ
-   ---  test_Jwt_Login.java  Ä£Äâajax£¬´«ËÍjsonÊı¾İ£¬²âÊÔJWT¼ì²â¡£
-   ---  test_Jwt_Login_Two_get  Ä£Äâget·½·¨£¬Í·²¿ÉèÖÃtoken£¬´«Êä²¢ÑéÖ¤£¬JWTÑéÖ¤¡£
+JWTçš„ç›¸å…³æµ‹è¯•
+   ---  test_Jwt_Login.java  æ¨¡æ‹Ÿajaxï¼Œä¼ é€jsonæ•°æ®ï¼Œæµ‹è¯•JWTæ£€æµ‹ã€‚
+   ---  test_Jwt_Login_Two_get  æ¨¡æ‹Ÿgetæ–¹æ³•ï¼Œå¤´éƒ¨è®¾ç½®tokenï¼Œä¼ è¾“å¹¶éªŒè¯ï¼ŒJWTéªŒè¯ã€‚
    
 --------------------------------  
-Ìí¼Ó²âÊÔ CUTVAPI ÏîÄ¿µÄ¹¤¾ß  2017 0519  
+æ·»åŠ æµ‹è¯• CUTVAPI é¡¹ç›®çš„å·¥å…·  2017 0519  
 
-ÏîÄ¿µØÖ·£º  
+é¡¹ç›®åœ°å€ï¼š  
 https://github.com/cnliuy/httpPostRequest.git  
+
 
    
    
