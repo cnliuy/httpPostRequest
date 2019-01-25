@@ -1,4 +1,4 @@
-package httpPostRequest.tvvas;
+package httpPostRequest.tvvas.apigw;
 
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
@@ -17,28 +17,32 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 import httpPostRequest.tools.encryptUtil;
+import httpPostRequest.tvvas.ConstanStr;
 
-public class testPost_QueryUserInfo {
+public class testPost_QueryUserInfo2 {
 	
 	
 	/**
-	 * ¡¶TVVAS APIGWÓëµÚÈı·½Ó¦ÓÃ½Ó¿Ú¹æ·¶¡·
-	 * 1.5  ²éÑ¯ÓÃ»§ĞÅÏ¢
+	 *  TVVAS APIGW   æŸ¥è¯¢ç”¨æˆ·ä¿¡æ¯
+	 * 1.5 	æŸ¥è¯¢ç”¨æˆ·ä¿¡æ¯
 	 * 
-	 * json ´«Öµ
+	 * json
+	 *  é€šè¿‡ IPTVå·ç æŸ¥è¯¢ 
+	 *  
+	 *  æŸ¥è¯¢ å®½å¸¦å· 
 	 * 
 	 * */
 	public static void main(String[] args) throws Exception {
 		String privateKey = "huangfei";	
 		
-		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//¶¨Òå¸ñÊ½£¬²»ÏÔÊ¾ºÁÃë		 
+		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss"); 	 
 		String timestampstr = df.format(new Date());
 		
 		 
-		//¿í´ø                         		iptv
+		//å®½å¸¦                       		iptv
 		//02202573097          088111116881
 		
-		String broadbandAccount = "02202573097";
+		String broadbandAccount = "02202573097"; //ç”¨æˆ·å®½å¸¦è´¦å· 
 		broadbandAccount = "053901803259";
 		broadbandAccount = "02200141763";
 		
@@ -46,9 +50,12 @@ public class testPost_QueryUserInfo {
 		String userProvince = "13";
 		userProvince = "17";
 		
-		userProvince = "13";
-		 
+		userProvince = "13";  //å¤©æ´¥
+		userProvince = "11";  //åŒ—äº¬
 	
+		String serviceId = "01-01014656314-01"; //IPTVä¸šåŠ¡å¸å·   ---  broadbandAccount å’Œ  serviceId äºŒé€‰ä¸€
+		
+		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 	 
 		String url = "http://"+ConstanStr.baseurl_zs+"/queryUserInfo" ;
@@ -64,8 +71,14 @@ public class testPost_QueryUserInfo {
 		String  parameters = "{\"userProvince\": \""+userProvince+"\","
 				+ "\"broadbandAccount\": \""+broadbandAccount+"\","
 				+ "}";
+		
+		
+		parameters = "{\"userProvince\": \""+userProvince+"\","
+				+ "\"serviceId\": \""+serviceId+"\","
+				+ "}";
+		
 		System.out.println("url:"+url);
-		System.out.println("ÇëÇó°ü:"+parameters);		
+		System.out.println("å‚æ•°:"+parameters);		
 		
 		httpPost.setEntity(new StringEntity(parameters, Charset.forName("UTF-8")));		
 

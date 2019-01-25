@@ -17,6 +17,7 @@ import org.apache.http.util.EntityUtils;
  *
  */
 public class Get_loginbytoken {
+	//获取token  http://127.0.0.1:8080/user/12
 	
 	public static void main(String[] args) throws ClientProtocolException, IOException {
 		String tokens ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50VGltZU1pbGxpcyI6IjE1NDcwMjQ4ODAyNDAiLCJleHAiOjE1NDcwMjUxODAsImFjY291bnQiOiJhY2NvdW50MSJ9.HCTxgvIO342l6RGW5sU6y3wMrgbbpTxR2oaXRsSFYfk";

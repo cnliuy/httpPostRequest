@@ -16,7 +16,10 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-
+/**
+ * 请求需要解密类
+ * 
+ * */
 public class Post_queryPostInfo2_Muti {
 	
 	public static void main(String[] args) throws Exception {
@@ -40,8 +43,8 @@ public class Post_queryPostInfo2_Muti {
 	 * */
 	public  void Post_testhellopost_Muti() throws Exception {
 		System.out.println(new Date());
-		String  url = "http://localhost:8080/testhellopost";
-		url = "http://localhost:8080/testhellopost";
+		String  url = "http://localhost:8080/t/testhellopost";
+		url = "http://localhost:8080/t/testhellopost";
 		
 		String parameters = "{\"useri\":\"adminadminadminadminadmin\"}";
 		parameters = "{\"upromotionresultinfo\":\"3SJbNr38GewUpnmrkon92\"}";
