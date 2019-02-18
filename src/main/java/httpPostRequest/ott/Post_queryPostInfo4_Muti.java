@@ -15,18 +15,21 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+ 
 
 /**
  * 请求解密类 和 token 解析
  * 
+ * 	调整加密方案
+ * 
  * */
-public class Post_queryPostInfo3_Muti {
+public class Post_queryPostInfo4_Muti {
 	
 	public static void main(String[] args) throws Exception {
 		
 		for(int i = 0 ; i< 1 ; i++) {
 			
-			Post_queryPostInfo3_Muti p = new Post_queryPostInfo3_Muti();
+			Post_queryPostInfo4_Muti p = new Post_queryPostInfo4_Muti();
 			p.Post_testhellopost_Muti(i);
 			System.out.println("执行第"+i+"次");
 			System.out.println("-----------");
@@ -40,6 +43,9 @@ public class Post_queryPostInfo3_Muti {
 	 * 结果信息
 	 * 
 	 * 获取token  http://127.0.0.1:8080/user/12
+	 * 
+	 * 调整加密方案
+	 * 
 	 * 
 	 * */
 	public  void Post_testhellopost_Muti(int i) throws Exception {
@@ -55,16 +61,16 @@ public class Post_queryPostInfo3_Muti {
 		
 		String token ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50VGltZU1pbGxpcyI6IjE1NDcwMjQ4ODAyNDAiLCJleHAiOjE1NDcwMjUxODAsImFjY291bnQiOiJhY2NvdW50MSJ9.HCTxgvIO342l6RGW5sU6y3wMrgbbpTxR2oaXRsSFYfk";
 		token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50VGltZU1pbGxpcyI6IjE1NDgwNTMxMTgyMDUiLCJleHAiOjE1NDgwNTYxMTgsImFjY291bnQiOiJhY2NvdW50MSJ9.nE6LghEzaGQ0NiUD_M1OKMCpoqTn37h48haDAbdz8x4";
-	 token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50VGltZU1pbGxpcyI6IjE1NDg0MTA5NTgzNzUiLCJleHAiOjE1NDg0MTM5NTgsImFjY291bnQiOiJhY2NvdW50MSJ9.Eav5N29EAH2k6zJF0wa9zlwB2mbXV5VAxfKbw6WB6rk";
+	 //token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50VGltZU1pbGxpcyI6IjE1NDg0MTA5NTgzNzUiLCJleHAiOjE1NDg0MTM5NTgsImFjY291bnQiOiJhY2NvdW50MSJ9.Eav5N29EAH2k6zJF0wa9zlwB2mbXV5VAxfKbw6WB6rk";
 		
 		String parameters ;
 		//实际传参
 	    //ott  otname  {"ott":"123","otname":"lllllh"}
 		parameters = "{\"ott\":\"123\",\"otname\":\"lllllh\"}"; //需要加密一下
 		parameters = "{\"ott\":\"123456\",\"otname\":\"lllllhhh 啊啊 "+i+ "\"}"; //
-		
-		
-		String enstr =SecurityUtil.encryptAESByPasswd(passwd, parameters);		
+		//String enstr = AESUtil.decrypt(enstr,clisecret);
+		String enstr = AESUtil.encrypt(parameters, passwd);
+		//String enstr = SecurityUtil.encryptAESByPasswd(passwd, parameters);		
 		parameters = "{ \"cliid\": \"ott1201\",\"enstr\": \""+enstr+"\" }";
 		System.out.println(parameters);
 		

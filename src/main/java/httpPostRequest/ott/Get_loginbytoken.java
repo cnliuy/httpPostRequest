@@ -27,7 +27,7 @@ public class Get_loginbytoken {
 		url = "http://127.0.0.1:8080/api/queryAccount?numstr=031800177748&areacode=0318&phoneType=03";
 		url = "http://127.0.0.1:8080/api/testGetUsername?uu=12456";
 		
-		for(int i =0 ;i<1000 ;i++) {
+		for(int i =0 ;i<1 ;i++) {
 		 Get_loginbytoken.loginbytoken(url,tokens);
 		 System.out.println("----------第 "+i+" 次");
 		}
