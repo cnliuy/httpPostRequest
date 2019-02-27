@@ -18,23 +18,24 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 
-public class Post_rest_Self_QueryAccountlock  {
+public class Post_rest_Self_CheckAccountlock  {
 	
 	/**
 	 * 自查询 
 	 * 	河南 童锁
-	 * 结果信息
+	 * 校验信息
 	 * 
 	 * 
 	 * */
 	public static void main(String[] args) throws Exception {
  
 		 
-		String  url = "http://127.0.0.1:5081/hn/querySafetylockSts"     ;
+		String  url = "http://127.0.0.1:5081/hn/checkSafetylockSts"     ;
 		//{"returncode":0,"returnmsg":"Success","returndesc":"ok","returndata":{"transactionID":"9659620190225172540000000000000000002"}}
 		//{"returncode":10004,"returnmsg":"param Err ","returndesc":"请求参数错误","returndata":null}
-		String parameters1 = "{\"productId\":\"hxlmby020@204\" ,\"loginAccount\":\"371654564701732403\"}";
-		//String parameters1 = "{\"productId\":\"hxlmby020@204\" ,\"loginAccount\":\"\"}";
+		//String parameters1 = "{\"productId\":\"hxlmby020@204\" ,\"loginAccount\":\"371654564701732403\"}";
+		String parameters1 = "{\"loginAccount\":\"zzlttest70\",\"passwd\":\"1111\"}";
+		parameters1 = "{\"loginAccount\":\"zzlttest70\",\"passwd\":\"1err\"}";
 		System.out.println(parameters1);
 	 	
 		 

@@ -18,23 +18,34 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 
-public class Post_rest_Self_QueryAccountlock  {
+public class Post_rest_Self_CheckAccountlock2  {
 	
 	/**
-	 * 自查询 
+	 * 自查询    加密
 	 * 	河南 童锁
-	 * 结果信息
+	 * 校验信息
 	 * 
 	 * 
 	 * */
 	public static void main(String[] args) throws Exception {
  
 		 
-		String  url = "http://127.0.0.1:5081/hn/querySafetylockSts"     ;
+		String  url = "http://127.0.0.1:5081/hn/checkSafetylockSts"     ;
 		//{"returncode":0,"returnmsg":"Success","returndesc":"ok","returndata":{"transactionID":"9659620190225172540000000000000000002"}}
 		//{"returncode":10004,"returnmsg":"param Err ","returndesc":"请求参数错误","returndata":null}
-		String parameters1 = "{\"productId\":\"hxlmby020@204\" ,\"loginAccount\":\"371654564701732403\"}";
-		//String parameters1 = "{\"productId\":\"hxlmby020@204\" ,\"loginAccount\":\"\"}";
+		//String parameters1 = "{\"productId\":\"hxlmby020@204\" ,\"loginAccount\":\"371654564701732403\"}";
+		String parameters1 = "{\"loginAccount\":\"zzlttest70\",\"passwd\":\"1111\"}";
+		
+		String loginAccount ="zzlttest70";
+		String passwd = "1111";
+		String appid = "cp0001";
+		String appkey = "trtret";
+		String time = "20190226142325";
+		
+		String sign = MD5_1.md5(appkey+time);
+		System.out.println(appkey+time );
+		parameters1 = "{\"loginAccount\":\""+loginAccount+"\",\"passwd\":\""+passwd+"\",\"appId\":\""+appid+"\",\"time\":\""+time+"\",\"sign\":\""+sign+"\"}";
+		 
 		System.out.println(parameters1);
 	 	
 		 
