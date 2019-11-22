@@ -20,7 +20,7 @@ public class logi_PostMethod_zh {
 		String area = null;
 		String ip = "192.168.18.111";
 		String mac = "F44C70FF2326";
-		String userId = "rewrewrere";//rewrewrere&carrierid=20
+		String userId = "cutv201711272010101";//rewrewrere&carrierid=20
 		String versionCode = "3180";
 		String model = "E900V21D";
 		String osVersion = "4.4.2";
