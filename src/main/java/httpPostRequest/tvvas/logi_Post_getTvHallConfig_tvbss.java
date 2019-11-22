@@ -20,9 +20,10 @@ public class logi_Post_getTvHallConfig_tvbss {
 		//carrierId = "201"; //天津
 		carrierId = "205";  //北京
 		//carrierId = "204";  //河南
-		 
+		carrierId = "208";  //内蒙
 		
-		String userId = "395294249080236389_204";//rewrewrere&carrierid=20
+		
+		String userId = "395294249080236389_208";//rewrewrere&carrierid=20
 		
 		//  userId = "";
 		userId = "088112341551";
@@ -56,7 +57,7 @@ public class logi_Post_getTvHallConfig_tvbss {
 		
 		//loginByUserIdurl = "http://202.99.114.63:35003/PORTAL/dsm/loginByUserId";   //jx 镜像		
 		loginByUserIdurl = "http://202.99.114.14:35824/PORTAL/dsm/loginByUserId";   //现网
-		
+		loginByUserIdurl = "http://202.99.114.30:35825/PORTAL/dsm/loginByUserId";//现网
 		System.out.println("Portal 登陆地址:" + loginByUserIdurl );
 		
 		String[] s = Post_login_vas_muti.vasloginReturnToken(loginByUserIdurl, carrierId, accessChannel, area, ip, mac, userId, versionCode, model, osVersion) ;
@@ -83,8 +84,17 @@ public class logi_Post_getTvHallConfig_tvbss {
 
 		 
  
-		testGet_GetTvHallConfig_1_96.GetTvHallConfig(serviceUrl, sessionId);
-		 
+		//testGet_GetTvHallConfig_1_96.GetTvHallConfig(serviceUrl, sessionId);
+		String  type = "1";
+		String  contentId = "V96596cn00914410";
+		String  tvPlatform = "0";
+		
+		
+		/**
+		 * 查询播放地址
+		 * 
+		 * */
+		testPost_QueryvideoUrl.QueryvideoUrl(serviceUrl, sessionId, carrierId, type, contentId, tvPlatform);
 		 
 		 
 	}
